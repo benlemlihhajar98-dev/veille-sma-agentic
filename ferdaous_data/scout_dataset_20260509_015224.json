@@ -1,0 +1,1109 @@
+{
+  "metadata": {
+    "agent": "FERDAOUS — Agent Scout",
+    "version": "1.0.0",
+    "generated_at": "2026-05-08T23:52:24.589137+00:00",
+    "project": "Cellule Automatisée de Veille Technologique & Stratégique",
+    "supervisors": [
+      "Pr. Hasnaa CHAABI",
+      "Pr. Nadia IDRISSI Zouggari"
+    ],
+    "sources_used": [
+      "GitHub API",
+      "arXiv API",
+      "RSS Feeds",
+      "Hacker News"
+    ],
+    "filter_keywords": [
+      "AI",
+      "LLM",
+      "agent",
+      "transformer",
+      "neural",
+      "deep learning",
+      "machine learning",
+      "GPT",
+      "Claude",
+      "Gemini",
+      "Mistral",
+      "langchain",
+      "RAG",
+      "embedding",
+      "fine-tun",
+      "multimodal",
+      "benchmark",
+      "autonomous",
+      "framework",
+      "hugging face"
+    ]
+  },
+  "statistics": {
+    "total": 35,
+    "by_source": {
+      "Shubhamsaboo/awesome-llm-apps": 1,
+      "arXiv": 12,
+      "x1xhlol/system-prompts-and-models-of-ai-tools": 1,
+      "anthropics/claude-code": 1,
+      "google-gemini/gemini-cli": 1,
+      "thedotmack/claude-mem": 1,
+      "TauricResearch/TradingAgents": 1,
+      "obra/superpowers": 1,
+      "affaan-m/everything-claude-code": 1,
+      "forrestchang/andrej-karpathy-skills": 1,
+      "msitarzewski/agency-agents": 1,
+      "browser-use/browser-use": 1,
+      "openai/codex": 1,
+      "karpathy/autoresearch": 1,
+      "anomalyco/opencode": 1,
+      "NousResearch/hermes-agent": 1,
+      "anthropics/skills": 1,
+      "firecrawl/firecrawl": 1,
+      "VoltAgent/awesome-design-md": 1,
+      "OpenHands/OpenHands": 1,
+      "Hacker News": 4
+    },
+    "by_type": {
+      "github": 19,
+      "arxiv": 12,
+      "hackernews": 4
+    },
+    "top_tags": {
+      "cs.AI": 10,
+      "cs.LG": 7,
+      "ai-agents": 6,
+      "llm": 6,
+      "ai": 5,
+      "cs.CV": 4,
+      "hacker news": 4,
+      "cs.CL": 3,
+      "anthropic": 3,
+      "claude": 3,
+      "claude-code": 3,
+      "python": 2,
+      "rag": 2,
+      "cli": 2,
+      "artificial-intelligence": 2,
+      "agent": 2,
+      "developer-tools": 2,
+      "math.OC": 2,
+      "chatgpt": 2,
+      "openai": 2
+    }
+  },
+  "items": [
+    {
+      "id": "ef3742cd7f60",
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "source_type": "github",
+      "title": "Shubhamsaboo/awesome-llm-apps",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "summary": "100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
+      "authors": [
+        "Shubhamsaboo"
+      ],
+      "tags": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "published_at": "2024-04-29T05:30:25Z",
+      "collected_at": "2026-05-08T23:51:40.693494+00:00",
+      "relevance_score": 0.667,
+      "extra": {
+        "stars": 109289,
+        "forks": 16167,
+        "language": "Python",
+        "open_issues": 6,
+        "updated_at": "2026-05-08T23:37:00Z",
+        "watchers": 109289
+      }
+    },
+    {
+      "id": "133677ddedb3",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "BAMI: Training-Free Bias Mitigation in GUI Grounding",
+      "url": "http://arxiv.org/abs/2605.06664v1",
+      "summary": "GUI grounding is a critical capability for enabling GUI agents to execute tasks such as clicking and dragging. However, in complex scenarios like the ScreenSpot-Pro benchmark, existing models often suffer from suboptimal performance. Utilizing the proposed \\textbf{Masked Prediction Distribution (MPD)} attribution method, we identify that the primary sources of errors are twofold: high image resolution (leading to precision bias) and intricate interface elements (resulting in ambiguity bias). To",
+      "authors": [
+        "Borui Zhang",
+        "Bo Zhang",
+        "Bo Wang",
+        "Wenzhao Zheng",
+        "Yuhao Cheng"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published_at": "2026-05-07T17:59:31Z",
+      "collected_at": "2026-05-08T23:51:42.710018+00:00",
+      "relevance_score": 0.667,
+      "extra": {
+        "query_used": "large language models agents",
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ]
+      }
+    },
+    {
+      "id": "6ec14b3cba2d",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction",
+      "url": "http://arxiv.org/abs/2605.06642v1",
+      "summary": "Large language models (LLMs) are increasingly used as interactive agents, but optimizing them for long-horizon decision making remains difficult because current methods are largely purely reactive, which weakens both exploration and credit assignment over extended trajectories. In this work, we present Strategic Trajectory Abstraction (StraTA), a simple framework that introduces an explicit trajectory-level strategy into agentic reinforcement learning (RL). StraTA samples a compact strategy from",
+      "authors": [
+        "Xiangyuan Xue",
+        "Yifan Zhou",
+        "Zidong Wang",
+        "Shengji Tang",
+        "Philip Torr"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published_at": "2026-05-07T17:51:16Z",
+      "collected_at": "2026-05-08T23:51:46.328558+00:00",
+      "relevance_score": 0.667,
+      "extra": {
+        "query_used": "autonomous AI agents",
+        "categories": [
+          "cs.AI",
+          "cs.CL"
+        ]
+      }
+    },
+    {
+      "id": "a6594191e679",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "Are We Making Progress in Multimodal Domain Generalization? A Comprehensive Benchmark Study",
+      "url": "http://arxiv.org/abs/2605.06643v1",
+      "summary": "Despite the growing popularity of Multimodal Domain Generalization (MMDG) for enhancing model robustness, it remains unclear whether reported performance gains reflect genuine algorithmic progress or are artifacts of inconsistent evaluation protocols. Current research is fragmented, with studies varying significantly across datasets, modality configurations, and experimental settings. Furthermore, existing benchmarks focus predominantly on action recognition, often neglecting critical real-world",
+      "authors": [
+        "Hao Dong",
+        "Hongzhao Li",
+        "Shupan Li",
+        "Muhammad Haris Khan",
+        "Eleni Chatzi"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.MM",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published_at": "2026-05-07T17:51:16Z",
+      "collected_at": "2026-05-08T23:51:59.102753+00:00",
+      "relevance_score": 0.667,
+      "extra": {
+        "query_used": "retrieval augmented generation",
+        "categories": [
+          "cs.CV",
+          "cs.MM",
+          "cs.LG",
+          "cs.AI"
+        ]
+      }
+    },
+    {
+      "id": "91af6099c3d7",
+      "source": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "source_type": "github",
+      "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "summary": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+      "authors": [
+        "x1xhlol"
+      ],
+      "tags": [
+        "ai",
+        "bolt",
+        "cluely",
+        "copilot",
+        "cursor",
+        "cursorai",
+        "devin",
+        "github-copilot",
+        "lovable",
+        "open-source",
+        "perplexity",
+        "replit",
+        "system-prompts",
+        "trae",
+        "trae-ai",
+        "trae-ide",
+        "v0",
+        "vscode",
+        "windsurf",
+        "windsurf-ai"
+      ],
+      "published_at": "2025-03-05T16:38:29Z",
+      "collected_at": "2026-05-08T23:51:40.693005+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 136922,
+        "forks": 34164,
+        "language": null,
+        "open_issues": 139,
+        "updated_at": "2026-05-08T22:39:16Z",
+        "watchers": 136922
+      }
+    },
+    {
+      "id": "bdc0f854674c",
+      "source": "anthropics/claude-code",
+      "source_type": "github",
+      "title": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "summary": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "authors": [
+        "anthropics"
+      ],
+      "tags": [],
+      "published_at": "2025-02-22T17:41:21Z",
+      "collected_at": "2026-05-08T23:51:40.693224+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 121686,
+        "forks": 20126,
+        "language": "Shell",
+        "open_issues": 10890,
+        "updated_at": "2026-05-08T23:50:56Z",
+        "watchers": 121686
+      }
+    },
+    {
+      "id": "089ed98d3da9",
+      "source": "google-gemini/gemini-cli",
+      "source_type": "github",
+      "title": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "authors": [
+        "google-gemini"
+      ],
+      "tags": [
+        "ai",
+        "ai-agents",
+        "cli",
+        "gemini",
+        "gemini-api",
+        "mcp-client",
+        "mcp-server"
+      ],
+      "published_at": "2025-04-17T17:04:31Z",
+      "collected_at": "2026-05-08T23:51:40.693577+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 103461,
+        "forks": 13538,
+        "language": "TypeScript",
+        "open_issues": 2244,
+        "updated_at": "2026-05-08T23:49:41Z",
+        "watchers": 103461
+      }
+    },
+    {
+      "id": "0ccf2e9cc906",
+      "source": "thedotmack/claude-mem",
+      "source_type": "github",
+      "title": "thedotmack/claude-mem",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "summary": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+      "authors": [
+        "thedotmack"
+      ],
+      "tags": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "published_at": "2025-08-31T20:50:03Z",
+      "collected_at": "2026-05-08T23:51:40.693938+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 73737,
+        "forks": 6336,
+        "language": "TypeScript",
+        "open_issues": 23,
+        "updated_at": "2026-05-08T23:46:01Z",
+        "watchers": 73737
+      }
+    },
+    {
+      "id": "f2ab841e2e27",
+      "source": "TauricResearch/TradingAgents",
+      "source_type": "github",
+      "title": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "summary": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "authors": [
+        "TauricResearch"
+      ],
+      "tags": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "published_at": "2024-12-28T03:31:08Z",
+      "collected_at": "2026-05-08T23:51:40.694177+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 71776,
+        "forks": 13939,
+        "language": "Python",
+        "open_issues": 400,
+        "updated_at": "2026-05-08T23:45:16Z",
+        "watchers": 71776
+      }
+    },
+    {
+      "id": "98ad25e2fd7a",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "Verifier-Backed Hard Problem Generation for Mathematical Reasoning",
+      "url": "http://arxiv.org/abs/2605.06660v1",
+      "summary": "Large Language Models (LLMs) demonstrate strong capabilities for solving scientific and mathematical problems, yet they struggle to produce valid, challenging, and novel problems - an essential component for advancing LLM training and enabling autonomous scientific research. Existing problem generation approaches either depend on expensive human expert involvement or adopt naive self-play paradigms, which frequently yield invalid problems due to reward hacking. This work introduces VHG, a verifi",
+      "authors": [
+        "Yuhang Lai",
+        "Jiazhan Feng",
+        "Yee Whye Teh",
+        "Ning Miao"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published_at": "2026-05-07T17:58:32Z",
+      "collected_at": "2026-05-08T23:51:42.710937+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "query_used": "large language models agents",
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.CL"
+        ]
+      }
+    },
+    {
+      "id": "c5c31379e062",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "AI Co-Mathematician: Accelerating Mathematicians with Agentic AI",
+      "url": "http://arxiv.org/abs/2605.06651v1",
+      "summary": "We introduce the AI co-mathematician, a workbench for mathematicians to interactively leverage AI agents to pursue open-ended research. The AI co-mathematician is optimized to provide holistic support for the exploratory and iterative reality of mathematical workflows, including ideation, literature search, computational exploration, theorem proving and theory building. By providing an asynchronous, stateful workspace that manages uncertainty, refines user intent, tracks failed hypotheses, and o",
+      "authors": [
+        "Daniel Zheng",
+        "Ingrid von Glehn",
+        "Yori Zwols",
+        "Iuliya Beloshapka",
+        "Lars Buesing"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "published_at": "2026-05-07T17:56:32Z",
+      "collected_at": "2026-05-08T23:51:46.326672+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "query_used": "autonomous AI agents",
+        "categories": [
+          "cs.AI"
+        ]
+      }
+    },
+    {
+      "id": "84c6ca189707",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "GlazyBench: A Benchmark for Ceramic Glaze Property Prediction and Image Generation",
+      "url": "http://arxiv.org/abs/2605.06641v1",
+      "summary": "Developing ceramic glazes is a costly, time-consuming process of trial and error due to complex chemistry, placing a significant burden on independent artists. While recent advances in multimodal AI offer a modern solution, the field lacks the large-scale datasets required to train these models. We propose GlazyBench, the first dataset for AI-assisted glaze design. Comprising 23,148 real glaze formulations, GlazyBench supports two primary tasks: predicting post-firing surface properties, such as",
+      "authors": [
+        "Ziyu Zhai",
+        "Siyou Li",
+        "Juexi Shao",
+        "Juntao Yu"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published_at": "2026-05-07T17:51:13Z",
+      "collected_at": "2026-05-08T23:51:55.203973+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "query_used": "multi-agent systems AI",
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ]
+      }
+    },
+    {
+      "id": "ec31ef2bcb4f",
+      "source": "obra/superpowers",
+      "source_type": "github",
+      "title": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "summary": "An agentic skills framework & software development methodology that works.",
+      "authors": [
+        "obra"
+      ],
+      "tags": [],
+      "published_at": "2025-10-09T19:45:18Z",
+      "collected_at": "2026-05-08T23:51:40.692606+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 183219,
+        "forks": 16279,
+        "language": "Shell",
+        "open_issues": 292,
+        "updated_at": "2026-05-08T23:50:06Z",
+        "watchers": 183219
+      }
+    },
+    {
+      "id": "207c4dee3f19",
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "title": "affaan-m/everything-claude-code",
+      "url": "https://github.com/affaan-m/everything-claude-code",
+      "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "authors": [
+        "affaan-m"
+      ],
+      "tags": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "published_at": "2026-01-18T00:51:51Z",
+      "collected_at": "2026-05-08T23:51:40.692763+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 175872,
+        "forks": 27207,
+        "language": "JavaScript",
+        "open_issues": 172,
+        "updated_at": "2026-05-08T23:31:23Z",
+        "watchers": 175872
+      }
+    },
+    {
+      "id": "ef50e1b4a582",
+      "source": "forrestchang/andrej-karpathy-skills",
+      "source_type": "github",
+      "title": "forrestchang/andrej-karpathy-skills",
+      "url": "https://github.com/forrestchang/andrej-karpathy-skills",
+      "summary": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "authors": [
+        "forrestchang"
+      ],
+      "tags": [],
+      "published_at": "2026-01-27T03:53:13Z",
+      "collected_at": "2026-05-08T23:51:40.693317+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 120586,
+        "forks": 12165,
+        "language": null,
+        "open_issues": 88,
+        "updated_at": "2026-05-08T23:50:58Z",
+        "watchers": 120586
+      }
+    },
+    {
+      "id": "10ad4087341c",
+      "source": "msitarzewski/agency-agents",
+      "source_type": "github",
+      "title": "msitarzewski/agency-agents",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "summary": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+      "authors": [
+        "msitarzewski"
+      ],
+      "tags": [],
+      "published_at": "2025-10-13T12:12:29Z",
+      "collected_at": "2026-05-08T23:51:40.693650+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 95065,
+        "forks": 15680,
+        "language": "Shell",
+        "open_issues": 126,
+        "updated_at": "2026-05-08T23:48:42Z",
+        "watchers": 95065
+      }
+    },
+    {
+      "id": "1f1e6c6cdd9f",
+      "source": "browser-use/browser-use",
+      "source_type": "github",
+      "title": "browser-use/browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "summary": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "authors": [
+        "browser-use"
+      ],
+      "tags": [
+        "ai-agents",
+        "ai-tools",
+        "browser-automation",
+        "browser-use",
+        "llm",
+        "playwright",
+        "python"
+      ],
+      "published_at": "2024-10-31T16:00:56Z",
+      "collected_at": "2026-05-08T23:51:40.693732+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 92964,
+        "forks": 10528,
+        "language": "Python",
+        "open_issues": 231,
+        "updated_at": "2026-05-08T23:19:44Z",
+        "watchers": 92964
+      }
+    },
+    {
+      "id": "64c19535df67",
+      "source": "openai/codex",
+      "source_type": "github",
+      "title": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "summary": "Lightweight coding agent that runs in your terminal",
+      "authors": [
+        "openai"
+      ],
+      "tags": [],
+      "published_at": "2025-04-13T05:37:54Z",
+      "collected_at": "2026-05-08T23:51:40.693793+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 80991,
+        "forks": 11686,
+        "language": "Rust",
+        "open_issues": 4029,
+        "updated_at": "2026-05-08T23:51:23Z",
+        "watchers": 80991
+      }
+    },
+    {
+      "id": "9ef38397a55d",
+      "source": "karpathy/autoresearch",
+      "source_type": "github",
+      "title": "karpathy/autoresearch",
+      "url": "https://github.com/karpathy/autoresearch",
+      "summary": "AI agents running research on single-GPU nanochat training automatically",
+      "authors": [
+        "karpathy"
+      ],
+      "tags": [],
+      "published_at": "2026-03-06T22:00:43Z",
+      "collected_at": "2026-05-08T23:51:40.693845+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 79795,
+        "forks": 11628,
+        "language": "Python",
+        "open_issues": 186,
+        "updated_at": "2026-05-08T23:46:13Z",
+        "watchers": 79795
+      }
+    },
+    {
+      "id": "9f4f41b7d0e4",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "Why Global LLM Leaderboards Are Misleading: Small Portfolios for Heterogeneous Supervised ML",
+      "url": "http://arxiv.org/abs/2605.06656v1",
+      "summary": "Ranking LLMs via pairwise human feedback underpins current leaderboards for open-ended tasks, such as creative writing and problem-solving. We analyze ~89K comparisons in 116 languages from 52 LLMs from Arena, and show that the best-fit global Bradley-Terry (BT) ranking is misleading. Nearly 2/3 of the decisive votes cancel out, and even the top 50 models according to the global BT ranking are statistically indistinguishable (pairwise win probabilities are at most 0.53 within the top 50 models).",
+      "authors": [
+        "Jai Moondra",
+        "Ayela Chughtai",
+        "Bhargavi Lanka",
+        "Swati Gupta"
+      ],
+      "tags": [
+        "cs.ET",
+        "cs.LG",
+        "cs.DM",
+        "math.OC"
+      ],
+      "published_at": "2026-05-07T17:57:58Z",
+      "collected_at": "2026-05-08T23:51:50.002775+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "query_used": "LLM tool use",
+        "categories": [
+          "cs.ET",
+          "cs.LG",
+          "cs.DM",
+          "math.OC"
+        ]
+      }
+    },
+    {
+      "id": "11e24e98b2d7",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "Optimizer-Model Consistency: Full Finetuning with the Same Optimizer as Pretraining Forgets Less",
+      "url": "http://arxiv.org/abs/2605.06654v1",
+      "summary": "Optimizers play an important role in both pretraining and finetuning stages when training large language models (LLMs). In this paper, we present an observation that full finetuning with the same optimizer as in pretraining achieves a better learning-forgetting tradeoff, i.e., forgetting less while achieving the same or better performance on the new task, than other optimizers and, possibly surprisingly, LoRA, during the supervised finetuning (SFT) stage. We term this phenomenon optimizer-model",
+      "authors": [
+        "Yuxing Liu",
+        "Jianyu Wang",
+        "Tong Zhang"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.AI",
+        "math.OC"
+      ],
+      "published_at": "2026-05-07T17:57:02Z",
+      "collected_at": "2026-05-08T23:51:50.003842+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "query_used": "LLM tool use",
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "math.OC"
+        ]
+      }
+    },
+    {
+      "id": "e0d693e12f7e",
+      "source": "anomalyco/opencode",
+      "source_type": "github",
+      "title": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "summary": "The open source coding agent.",
+      "authors": [
+        "anomalyco"
+      ],
+      "tags": [],
+      "published_at": "2025-04-30T20:08:00Z",
+      "collected_at": "2026-05-08T23:51:40.692867+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 157051,
+        "forks": 18290,
+        "language": "TypeScript",
+        "open_issues": 6479,
+        "updated_at": "2026-05-08T23:47:53Z",
+        "watchers": 157051
+      }
+    },
+    {
+      "id": "4010d491d6ad",
+      "source": "NousResearch/hermes-agent",
+      "source_type": "github",
+      "title": "NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "summary": "The agent that grows with you",
+      "authors": [
+        "NousResearch"
+      ],
+      "tags": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "clawdbot",
+        "codex",
+        "hermes",
+        "hermes-agent",
+        "llm",
+        "moltbot",
+        "nous-research",
+        "openai",
+        "openclaw"
+      ],
+      "published_at": "2025-07-22T22:22:28Z",
+      "collected_at": "2026-05-08T23:51:40.692921+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 139178,
+        "forks": 21493,
+        "language": "Python",
+        "open_issues": 9148,
+        "updated_at": "2026-05-08T23:51:36Z",
+        "watchers": 139178
+      }
+    },
+    {
+      "id": "27d8937674a2",
+      "source": "anthropics/skills",
+      "source_type": "github",
+      "title": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "summary": "Public repository for Agent Skills",
+      "authors": [
+        "anthropics"
+      ],
+      "tags": [
+        "agent-skills"
+      ],
+      "published_at": "2025-09-22T15:53:31Z",
+      "collected_at": "2026-05-08T23:51:40.693100+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 130489,
+        "forks": 15354,
+        "language": "Python",
+        "open_issues": 816,
+        "updated_at": "2026-05-08T23:47:18Z",
+        "watchers": 130489
+      }
+    },
+    {
+      "id": "bef32d25e7d1",
+      "source": "firecrawl/firecrawl",
+      "source_type": "github",
+      "title": "firecrawl/firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "summary": "🔥 The API to search, scrape, and interact with the web for AI",
+      "authors": [
+        "firecrawl"
+      ],
+      "tags": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown",
+        "llm",
+        "markdown",
+        "scraper",
+        "scraping",
+        "web-crawler",
+        "web-data",
+        "web-data-extraction",
+        "web-scraper",
+        "web-scraping",
+        "web-search",
+        "webscraping"
+      ],
+      "published_at": "2024-04-15T21:02:29Z",
+      "collected_at": "2026-05-08T23:51:40.693407+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 117040,
+        "forks": 7313,
+        "language": "TypeScript",
+        "open_issues": 308,
+        "updated_at": "2026-05-08T23:48:14Z",
+        "watchers": 117040
+      }
+    },
+    {
+      "id": "ba7ba7adf47a",
+      "source": "VoltAgent/awesome-design-md",
+      "source_type": "github",
+      "title": "VoltAgent/awesome-design-md",
+      "url": "https://github.com/VoltAgent/awesome-design-md",
+      "summary": "A collection of DESIGN.md files inspired by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+      "authors": [
+        "VoltAgent"
+      ],
+      "tags": [
+        "awesome-list",
+        "design-md",
+        "design-system",
+        "design-tokens",
+        "figma",
+        "google-stitch",
+        "landing-page",
+        "vibe-coding",
+        "vibe-design"
+      ],
+      "published_at": "2026-03-31T16:37:01Z",
+      "collected_at": "2026-05-08T23:51:40.694032+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 73579,
+        "forks": 8983,
+        "language": null,
+        "open_issues": 280,
+        "updated_at": "2026-05-08T23:49:43Z",
+        "watchers": 73579
+      }
+    },
+    {
+      "id": "1b85844e6d27",
+      "source": "OpenHands/OpenHands",
+      "source_type": "github",
+      "title": "OpenHands/OpenHands",
+      "url": "https://github.com/OpenHands/OpenHands",
+      "summary": "🙌 OpenHands: AI-Driven Development",
+      "authors": [
+        "OpenHands"
+      ],
+      "tags": [
+        "agent",
+        "artificial-intelligence",
+        "chatgpt",
+        "claude-ai",
+        "cli",
+        "developer-tools",
+        "gpt",
+        "llm",
+        "openai"
+      ],
+      "published_at": "2024-03-13T03:33:31Z",
+      "collected_at": "2026-05-08T23:51:40.694113+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 72934,
+        "forks": 9233,
+        "language": "Python",
+        "open_issues": 414,
+        "updated_at": "2026-05-08T23:46:47Z",
+        "watchers": 72934
+      }
+    },
+    {
+      "id": "cea7fa04db1d",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "ActCam: Zero-Shot Joint Camera and 3D Motion Control for Video Generation",
+      "url": "http://arxiv.org/abs/2605.06667v1",
+      "summary": "For artistic applications, video generation requires fine-grained control over both performance and cinematography, i.e., the actor's motion and the camera trajectory. We present ActCam, a zero-shot method for video generation that jointly transfers character motion from a driving video into a new scene and enables per-frame control of intrinsic and extrinsic camera parameters. ActCam builds on any pretrained image-to-video diffusion model that accepts conditioning in terms of scene depth and ch",
+      "authors": [
+        "Omar El Khalifi",
+        "Thomas Rossi",
+        "Oscar Fossey",
+        "Thibault Fouque",
+        "Ulysse Mizrahi"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published_at": "2026-05-07T17:59:58Z",
+      "collected_at": "2026-05-08T23:51:42.708528+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "query_used": "large language models agents",
+        "categories": [
+          "cs.CV",
+          "cs.LG",
+          "cs.AI"
+        ]
+      }
+    },
+    {
+      "id": "74aaee6320e2",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "UniPool: A Globally Shared Expert Pool for Mixture-of-Experts",
+      "url": "http://arxiv.org/abs/2605.06665v1",
+      "summary": "Modern Mixture-of-Experts (MoE) architectures allocate expert capacity through a rigid per-layer rule: each transformer layer owns a separate expert set. This convention couples depth scaling with linear expert-parameter growth and assumes that every layer needs isolated expert capacity. However, recent analyses and our routing probe challenge this allocation rule: replacing a deeper layer's learned top-k router with uniform random routing drops downstream accuracy by only 1.0-1.6 points across",
+      "authors": [
+        "Minbin Huang",
+        "Han Shi",
+        "Chuanyang Zheng",
+        "Yimeng Wu",
+        "Guoxuan Chen"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published_at": "2026-05-07T17:59:44Z",
+      "collected_at": "2026-05-08T23:51:42.709357+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "query_used": "large language models agents",
+        "categories": [
+          "cs.LG",
+          "cs.AI"
+        ]
+      }
+    },
+    {
+      "id": "aaa0cf775fc2",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "url": "http://arxiv.org/abs/2605.06663v1",
+      "summary": "Large language models are typically deployed as monolithic systems, requiring the full model even when applications need only a narrow subset of capabilities, e.g., code, math, or domain-specific knowledge. Mixture-of-Experts (MoEs) seemingly offer a potential alternative by activating only a subset of experts per input, but in practice, restricting inference to a subset of experts for a given domain leads to severe performance degradation. This limits their practicality in memory-constrained se",
+      "authors": [
+        "Ryan Wang",
+        "Akshita Bhagia",
+        "Sewon Min"
+      ],
+      "tags": [
+        "cs.CL"
+      ],
+      "published_at": "2026-05-07T17:59:20Z",
+      "collected_at": "2026-05-08T23:51:42.710465+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "query_used": "large language models agents",
+        "categories": [
+          "cs.CL"
+        ]
+      }
+    },
+    {
+      "id": "5884a0a7d7a2",
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval",
+      "url": "http://arxiv.org/abs/2605.06647v1",
+      "summary": "Retrieval-augmented agents are increasingly the interface to large organizational knowledge bases, yet most still treat retrieval as a black box: they issue exploratory queries, inspect returned snippets, and iteratively reformulate until useful evidence emerges. This approach resembles how a newcomer searches an unfamiliar database rather than how an expert navigates it with strong priors about terminology and likely evidence, and results in unnecessary retrieval rounds, increased latency, and",
+      "authors": [
+        "Zeyu Yang",
+        "Qi Ma",
+        "Jason Chen",
+        "Anshumali Shrivastava"
+      ],
+      "tags": [
+        "cs.IR",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published_at": "2026-05-07T17:54:29Z",
+      "collected_at": "2026-05-08T23:51:46.327774+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "query_used": "autonomous AI agents",
+        "categories": [
+          "cs.IR",
+          "cs.LG",
+          "cs.AI"
+        ]
+      }
+    },
+    {
+      "id": "3470ef074c0e",
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "AI is breaking two vulnerability cultures",
+      "url": "https://www.jefftk.com/p/ai-is-breaking-two-vulnerability-cultures",
+      "summary": "",
+      "authors": [
+        "speckx"
+      ],
+      "tags": [
+        "hacker news"
+      ],
+      "published_at": "2026-05-08T17:55:08+00:00",
+      "collected_at": "2026-05-08T23:52:14.459281+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "hn_id": 48066524,
+        "score": 193,
+        "comments": 83
+      }
+    },
+    {
+      "id": "41f2fec9319f",
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "Teaching Claude Why",
+      "url": "https://www.anthropic.com/research/teaching-claude-why",
+      "summary": "",
+      "authors": [
+        "pretext"
+      ],
+      "tags": [
+        "hacker news"
+      ],
+      "published_at": "2026-05-08T17:59:41+00:00",
+      "collected_at": "2026-05-08T23:52:19.253501+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "hn_id": 48066592,
+        "score": 61,
+        "comments": 11
+      }
+    },
+    {
+      "id": "aa054842a9e1",
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "Rumors of my death are slightly exaggerated",
+      "url": "https://news.ycombinator.com/item?id=48037336",
+      "summary": "AI hallucinations are getting ambitious. A couple people recently emailed, asking whether the Klein bottle business was still operating after my death. “Huh?” I thought. “I ain’t dead yet.” After some digging, I discovered the source: an AI-generated review of The Cuckoo’s Egg circulating on Facebook. Alongside the usual synthetic praise and fabricated details, it confidently announced that I had died in May 2024. Apparently AI has now advanced to the point where it can kill people off before th",
+      "authors": [
+        "CliffStoll"
+      ],
+      "tags": [
+        "hacker news"
+      ],
+      "published_at": "2026-05-06T15:24:51+00:00",
+      "collected_at": "2026-05-08T23:52:21.308637+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "hn_id": 48037336,
+        "score": 1473,
+        "comments": 228
+      }
+    },
+    {
+      "id": "d8fd0a7a16df",
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "Show HN: GETadb.com – every GET request creates a DB",
+      "url": "https://www.getadb.com/",
+      "summary": "Hey HN! We made GETadb.com, so it&#x27;s easier to get agents to build you full stack apps. You don&#x27;t need to give them any credentials. Just by loading a GET request, they get access to a database, a sync engine, and abstractions for auth, presence, and streams. To see what the agent sees, you can load https:&#x2F;&#x2F;getadb.com&#x2F;new There&#x27;s two fun things about how it&#x27;s implemented: 1. If you curl the home page, it the agent content rather than human content. We do this by",
+      "authors": [
+        "nezaj"
+      ],
+      "tags": [
+        "hacker news"
+      ],
+      "published_at": "2026-05-08T16:17:37+00:00",
+      "collected_at": "2026-05-08T23:52:24.111252+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "hn_id": 48065203,
+        "score": 23,
+        "comments": 29
+      }
+    }
+  ]
+}

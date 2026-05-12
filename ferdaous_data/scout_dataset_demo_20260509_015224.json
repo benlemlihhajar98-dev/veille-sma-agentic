@@ -1,0 +1,542 @@
+{
+  "metadata": {
+    "agent": "FERDAOUS — Agent Scout",
+    "version": "1.0.0",
+    "mode": "DEMO",
+    "generated_at": "2026-05-08T23:52:24.722936+00:00",
+    "project": "Cellule Automatisée de Veille Technologique & Stratégique",
+    "supervisors": [
+      "Pr. Hasnaa CHAABI",
+      "Pr. Nadia IDRISSI Zouggari"
+    ],
+    "sources_used": [
+      "GitHub API",
+      "arXiv API",
+      "RSS Feeds",
+      "Hacker News"
+    ],
+    "filter_keywords": [
+      "AI",
+      "LLM",
+      "agent",
+      "transformer",
+      "neural",
+      "deep learning",
+      "machine learning",
+      "GPT",
+      "Claude",
+      "Gemini",
+      "Mistral",
+      "langchain",
+      "RAG",
+      "embedding",
+      "fine-tun",
+      "multimodal",
+      "benchmark",
+      "autonomous",
+      "framework",
+      "hugging face"
+    ]
+  },
+  "statistics": {
+    "total": 18,
+    "by_type": {
+      "github": 5,
+      "arxiv": 5,
+      "rss": 4,
+      "hackernews": 4
+    },
+    "by_source": {
+      "microsoft/autogen": 1,
+      "langchain-ai/langchain": 1,
+      "unslothai/unsloth": 1,
+      "arXiv": 5,
+      "Hugging Face Blog": 1,
+      "The Batch (DeepLearning.AI)": 1,
+      "Towards Data Science": 1,
+      "Hacker News": 4,
+      "oobabooga/text-generation-webui": 1,
+      "meta-llama/llama3": 1,
+      "Google AI Blog": 1
+    },
+    "top_tags": {
+      "llm": 11,
+      "cs.AI": 5,
+      "hacker news": 4,
+      "agents": 3,
+      "llama": 3,
+      "open-source": 3,
+      "cs.CL": 3,
+      "multi-agent": 2,
+      "python": 2,
+      "rag": 2,
+      "langchain": 2,
+      "mistral": 2,
+      "cs.LG": 2,
+      "meta": 2,
+      "openai": 1,
+      "autogen": 1,
+      "fine-tuning": 1,
+      "efficient": 1,
+      "cs.IR": 1,
+      "agentic": 1
+    }
+  },
+  "items": [
+    {
+      "source": "microsoft/autogen",
+      "source_type": "github",
+      "title": "microsoft/autogen",
+      "url": "https://github.com/microsoft/autogen",
+      "summary": "AutoGen is a framework enabling multi-agent LLM applications via automated agent conversations. Supports tool calling, code execution, RAG, and human-in-the-loop workflows.",
+      "authors": [
+        "microsoft"
+      ],
+      "tags": [
+        "llm",
+        "multi-agent",
+        "python",
+        "openai",
+        "autogen"
+      ],
+      "published_at": "2024-02-10T00:00:00Z",
+      "extra": {
+        "stars": 39800,
+        "forks": 5700,
+        "language": "Python",
+        "open_issues": 423
+      },
+      "id": "af973896c4f1",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.667
+    },
+    {
+      "source": "langchain-ai/langchain",
+      "source_type": "github",
+      "title": "langchain-ai/langchain",
+      "url": "https://github.com/langchain-ai/langchain",
+      "summary": "Build context-aware reasoning applications with LangChain. Provides tools, chains, agents, and memory abstractions for LLMs.",
+      "authors": [
+        "langchain-ai"
+      ],
+      "tags": [
+        "llm",
+        "agents",
+        "rag",
+        "python",
+        "langchain"
+      ],
+      "published_at": "2024-01-05T00:00:00Z",
+      "extra": {
+        "stars": 95000,
+        "forks": 15600,
+        "language": "Python",
+        "open_issues": 1200
+      },
+      "id": "a9ddcbbfaac5",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.667
+    },
+    {
+      "source": "unslothai/unsloth",
+      "source_type": "github",
+      "title": "unslothai/unsloth",
+      "url": "https://github.com/unslothai/unsloth",
+      "summary": "2-5x faster LLM fine-tuning with 70% less memory. Compatible with Llama 3, Mistral, Phi-3, Gemma and others.",
+      "authors": [
+        "unslothai"
+      ],
+      "tags": [
+        "fine-tuning",
+        "llm",
+        "mistral",
+        "llama",
+        "efficient"
+      ],
+      "published_at": "2024-03-01T00:00:00Z",
+      "extra": {
+        "stars": 22000,
+        "forks": 1500,
+        "language": "Python",
+        "open_issues": 88
+      },
+      "id": "d72a5fd66f24",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.667
+    },
+    {
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture",
+      "url": "https://arxiv.org/abs/2401.08406",
+      "summary": "We compare retrieval-augmented generation and fine-tuning paradigms for adapting LLMs to domain-specific tasks, analyzing accuracy, cost, and inference latency across multiple settings.",
+      "authors": [
+        "Angels Balaguer",
+        "Vinamra Benara",
+        "Renato Cunha"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.IR"
+      ],
+      "published_at": "2024-04-05T00:00:00Z",
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.LG"
+        ],
+        "query_used": "retrieval augmented generation"
+      },
+      "id": "206f7a432d7c",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.667
+    },
+    {
+      "source": "Hugging Face Blog",
+      "source_type": "rss",
+      "title": "Introducing Llama 3.1: Our Most Capable Open Source LLM",
+      "url": "https://huggingface.co/blog/llama31",
+      "summary": "Meta releases Llama 3.1, featuring 405B, 70B, and 8B parameter models. The 405B model rivals GPT-4 on several benchmarks while remaining fully open source.",
+      "authors": [],
+      "tags": [
+        "llama",
+        "open-source",
+        "meta",
+        "llm"
+      ],
+      "published_at": "2024-07-23T10:00:00+00:00",
+      "extra": {
+        "feed_url": "https://huggingface.co/blog/feed.xml"
+      },
+      "id": "c1049ce8e4fa",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.667
+    },
+    {
+      "source": "The Batch (DeepLearning.AI)",
+      "source_type": "rss",
+      "title": "Agentic AI: The Next Frontier in Automation",
+      "url": "https://www.deeplearning.ai/the-batch/agentic-ai-frontier",
+      "summary": "Andrew Ng explores agentic AI workflows where LLMs autonomously plan, use tools, and execute multi-step tasks. Four key patterns: reflection, tool use, planning, and multi-agent collaboration.",
+      "authors": [],
+      "tags": [
+        "agentic",
+        "llm",
+        "automation",
+        "deeplearning"
+      ],
+      "published_at": "2024-04-12T08:00:00+00:00",
+      "extra": {
+        "feed_url": "https://www.deeplearning.ai/the-batch/feed/"
+      },
+      "id": "a585fb44ca9a",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.667
+    },
+    {
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "A Survey on Large Language Model based Autonomous Agents",
+      "url": "https://arxiv.org/abs/2308.11432",
+      "summary": "Comprehensive survey of LLM-based autonomous agents covering their construction, applications, and evaluation. Reviews over 700 papers on planning, memory, tool use, and multi-agent cooperation.",
+      "authors": [
+        "Lei Wang",
+        "Chen Ma",
+        "Xueyang Feng",
+        "Zeyu Zhang"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published_at": "2024-03-10T00:00:00Z",
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.LG"
+        ],
+        "query_used": "autonomous AI agents"
+      },
+      "id": "8aa35928b46c",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.5
+    },
+    {
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "GPT-4 Technical Report",
+      "url": "https://arxiv.org/abs/2303.08774",
+      "summary": "GPT-4 is a large-scale multimodal model which accepts image and text inputs and produces text outputs. The model exhibits human-level performance on various academic and professional benchmarks.",
+      "authors": [
+        "OpenAI"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published_at": "2024-01-20T00:00:00Z",
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.AI"
+        ],
+        "query_used": "large language models agents"
+      },
+      "id": "6276bf9d5ec2",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.5
+    },
+    {
+      "source": "Towards Data Science",
+      "source_type": "rss",
+      "title": "Building Production-Ready RAG Applications",
+      "url": "https://towardsdatascience.com/production-rag-applications",
+      "summary": "A comprehensive guide to building RAG pipelines in production, covering chunking strategies, embedding models, vector stores, reranking, and evaluation frameworks.",
+      "authors": [],
+      "tags": [
+        "rag",
+        "production",
+        "llm",
+        "vector-db"
+      ],
+      "published_at": "2024-06-15T09:30:00+00:00",
+      "extra": {
+        "feed_url": "https://towardsdatascience.com/feed"
+      },
+      "id": "ad5de7df1e15",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.5
+    },
+    {
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "Mistral AI releases Mixtral 8x22B — Best open model yet",
+      "url": "https://mistral.ai/news/mixtral-8x22b",
+      "summary": "Mistral AI open-sources Mixtral 8x22B, a sparse mixture-of-experts model outperforming LLaMA 2 70B on most benchmarks at lower inference cost.",
+      "authors": [
+        "MistralAI"
+      ],
+      "tags": [
+        "hacker news",
+        "mistral",
+        "llm",
+        "open-source"
+      ],
+      "published_at": "2024-04-10T14:00:00+00:00",
+      "extra": {
+        "hn_id": 39923456,
+        "score": 1203,
+        "comments": 445
+      },
+      "id": "619021946325",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.5
+    },
+    {
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "The unreasonable effectiveness of multi-agent systems",
+      "url": "https://blog.langchain.dev/multi-agent-systems",
+      "summary": "LangChain blog post discussing architectures for multi-agent AI systems including orchestrator-subagent patterns, agent communication, and failure recovery strategies.",
+      "authors": [
+        "hwchase17"
+      ],
+      "tags": [
+        "hacker news",
+        "langchain",
+        "agents",
+        "multi-agent"
+      ],
+      "published_at": "2024-05-01T11:00:00+00:00",
+      "extra": {
+        "hn_id": 40134567,
+        "score": 654,
+        "comments": 189
+      },
+      "id": "90dbba20a416",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.5
+    },
+    {
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "Claude 3 Opus beats GPT-4 on MMLU, HumanEval and others",
+      "url": "https://www.anthropic.com/news/claude-3-family",
+      "summary": "Anthropic releases the Claude 3 model family. Opus sets new benchmarks in reasoning, coding, and multilingual tasks while improving safety alignment.",
+      "authors": [
+        "anthropic_hq"
+      ],
+      "tags": [
+        "hacker news",
+        "claude",
+        "anthropic",
+        "llm",
+        "benchmark"
+      ],
+      "published_at": "2024-03-04T09:00:00+00:00",
+      "extra": {
+        "hn_id": 39607890,
+        "score": 2341,
+        "comments": 789
+      },
+      "id": "2e12f7b1bbfa",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.5
+    },
+    {
+      "source": "oobabooga/text-generation-webui",
+      "source_type": "github",
+      "title": "oobabooga/text-generation-webui",
+      "url": "https://github.com/oobabooga/text-generation-webui",
+      "summary": "A Gradio web UI for Large Language Models. Supports transformers, GPTQ, AWQ, llama.cpp, and many others.",
+      "authors": [
+        "oobabooga"
+      ],
+      "tags": [
+        "llm",
+        "inference",
+        "gradio",
+        "transformers"
+      ],
+      "published_at": "2024-02-20T00:00:00Z",
+      "extra": {
+        "stars": 41000,
+        "forks": 5300,
+        "language": "Python",
+        "open_issues": 300
+      },
+      "id": "dc71da3ccfd9",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.333
+    },
+    {
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "summary": "We present ReAct, a framework that combines reasoning and acting in language models. The agent generates reasoning traces and task-specific actions interleaved, allowing dynamic reasoning and tool use.",
+      "authors": [
+        "Shunyu Yao",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published_at": "2024-01-15T00:00:00Z",
+      "extra": {
+        "categories": [
+          "cs.AI",
+          "cs.CL"
+        ],
+        "query_used": "LLM tool use"
+      },
+      "id": "5202da99d1a0",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.333
+    },
+    {
+      "source": "meta-llama/llama3",
+      "source_type": "github",
+      "title": "meta-llama/llama3",
+      "url": "https://github.com/meta-llama/llama3",
+      "summary": "The Meta Llama 3 collection of multilingual LLMs. State-of-the-art open source model family at 8B, 70B, and 405B parameters.",
+      "authors": [
+        "meta-llama"
+      ],
+      "tags": [
+        "llm",
+        "llama",
+        "open-source",
+        "meta"
+      ],
+      "published_at": "2024-04-18T00:00:00Z",
+      "extra": {
+        "stars": 28000,
+        "forks": 3000,
+        "language": "Python",
+        "open_issues": 250
+      },
+      "id": "a1246b978f5f",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.167
+    },
+    {
+      "source": "arXiv",
+      "source_type": "arxiv",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "url": "https://arxiv.org/abs/2302.04761",
+      "summary": "We introduce Toolformer, a model trained to decide which APIs to call, when to call them, and how to incorporate results in future token prediction, achieving substantially improved zero-shot performance.",
+      "authors": [
+        "Timo Schick",
+        "Jane Dwivedi-Yu",
+        "Roberto Dessì",
+        "Roberta Raileanu"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published_at": "2024-02-01T00:00:00Z",
+      "extra": {
+        "categories": [
+          "cs.CL",
+          "cs.AI"
+        ],
+        "query_used": "LLM tool use"
+      },
+      "id": "172caaff1ed4",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.167
+    },
+    {
+      "source": "Google AI Blog",
+      "source_type": "rss",
+      "title": "Gemini 1.5 Pro: Our Best Model to Date",
+      "url": "https://blog.research.google/2024/02/gemini-15-pro.html",
+      "summary": "Gemini 1.5 Pro introduces a 1 million token context window, enabling unprecedented long-context understanding across text, video, audio, and code.",
+      "authors": [],
+      "tags": [
+        "gemini",
+        "google",
+        "llm",
+        "multimodal",
+        "context-window"
+      ],
+      "published_at": "2024-02-15T12:00:00+00:00",
+      "extra": {
+        "feed_url": "https://blog.research.google/feeds/posts/default"
+      },
+      "id": "a424eedae143",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.167
+    },
+    {
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "Show HN: I built an open-source alternative to Devin AI",
+      "url": "https://github.com/OpenDevin/OpenDevin",
+      "summary": "OpenDevin is an open-source AI software engineer capable of executing complex engineering tasks with natural language instructions. Discussion thread with 847 points.",
+      "authors": [
+        "neubig"
+      ],
+      "tags": [
+        "hacker news",
+        "ai",
+        "agents"
+      ],
+      "published_at": "2024-04-02T16:30:00+00:00",
+      "extra": {
+        "hn_id": 39876543,
+        "score": 847,
+        "comments": 312
+      },
+      "id": "fcc7e750c3ab",
+      "collected_at": "2026-05-08T23:52:24.722936+00:00",
+      "relevance_score": 0.167
+    }
+  ]
+}
