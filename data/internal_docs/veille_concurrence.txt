@@ -1,0 +1,8 @@
+La concurrence investit fortement dans les systèmes multi-agents.
+
+Les entreprises technologiques utilisent désormais :
+- LangChain
+- CrewAI
+- AutoGen
+
+Les agents autonomes sont considérés comme une tendance stratégique majeure.
