@@ -1,0 +1,6 @@
+Les frameworks LangChain et CrewAI ont été étudiés.
+
+L’entreprise souhaite développer des systèmes multi-agents capables de :
+- planifier des tâches
+- collaborer entre agents
+- produire des rapports automatiques

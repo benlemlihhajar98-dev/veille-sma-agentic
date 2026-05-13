@@ -1,0 +1,8 @@
+L’entreprise expérimente les technologies RAG depuis 2024.
+
+Les objectifs principaux sont :
+- automatisation documentaire
+- recherche intelligente
+- veille technologique
+
+Des tests ont été réalisés avec MiniLM et Gemini Embeddings.
