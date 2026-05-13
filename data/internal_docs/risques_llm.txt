@@ -1,0 +1,8 @@
+L’entreprise a identifié plusieurs risques liés aux modèles LLM :
+
+- hallucinations des réponses
+- fuite potentielle de données sensibles
+- dépendance aux APIs externes
+- coûts élevés de calcul
+
+Une validation humaine reste nécessaire pour les rapports critiques.
