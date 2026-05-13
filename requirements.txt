@@ -1,5 +1,3 @@
-langchain
-langchain-community
 openai
 faiss-cpu
 chromadb
@@ -8,4 +6,25 @@ feedparser
 requests
 beautifulsoup4
 python-dotenv
+markdown
+# ── LangChain ──────────────────────────────────
+langchain
+langchain-community
+langchain-text-splitters
+
+# ── Groq (utilisé par WAFAE) ───────────────────
+groq
+
+# ── Embeddings & RAG (utilisés par KHADIJA) ────
+sentence-transformers
+scikit-learn
+numpy
+
+# ── Chargement des variables d'environnement ───
+python-dotenv
+
+# ── Optionnel : GitHub token (FERDAOUS) ────────
+# Aucune lib supplémentaire — urllib intégré Python
+
+# ── Rapport ────────────────────────────────────
 markdown
