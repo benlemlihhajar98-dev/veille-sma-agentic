@@ -1,6 +1,21 @@
-La stratégie IA de l’entreprise vise :
-- réduction des coûts
-- amélioration de la veille technologique
-- automatisation des workflows internes
+STRATÉGIE IA — Entreprise X — 2025-2026
 
-Les agents IA autonomes représentent un axe stratégique important.
+Technologies actuellement EN PRODUCTION :
+- LangChain 0.2 : orchestration des pipelines LLM (depuis jan. 2026)
+- ChromaDB : stockage vectoriel, 12 000 documents indexés
+- GPT-4o (OpenAI) : modèle principal, ~4 000 appels/jour
+- MiniLM (local) : embeddings internes, latence < 50ms
+
+Technologies EN ÉVALUATION :
+- LangGraph : POC en cours, équipe data science (3 dev)
+- CrewAI : évaluation démarrée mars 2026, résultats Q3
+
+Technologies REJETÉES ou NON ADOPTÉES :
+- AutoGen : évalué Q4 2025, rejeté (complexité déploiement)
+- Phidata : non évalué à ce jour
+- Fine-tuning local : repoussé à 2027 (coût GPU)
+
+Axes stratégiques 2026 :
+- Réduction dépendance OpenAI : objectif 60% → 40% en Q4 2026
+- Agents autonomes en production : objectif Q3 2026
+- Budget IA alloué : 2,4M€ sur 18 mois (validé déc. 2025)

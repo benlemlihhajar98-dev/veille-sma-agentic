@@ -1,0 +1,21 @@
+POSITIONS TECHNOLOGIQUES — Entreprise X — mai 2026
+
+STACK IA ACTUEL :
+Framework orchestration  : LangChain 0.2 (production)
+Vector store             : ChromaDB (production)
+Embeddings               : MiniLM all-MiniLM-L6-v2 (production)
+LLM principal            : GPT-4o via OpenAI API
+LLM secondaire           : Claude 3 Haiku (résumés, brouillons)
+LLM interne              : Mistral 7B auto-hébergé (données sensibles)
+RAG pipeline             : LangChain + ChromaDB + MiniLM
+
+ÉCARTS IDENTIFIÉS PAR RAPPORT AU MARCHÉ :
+- Pas d'agent multi-agents en production (marché : AutoGen, CrewAI)
+- Pas de fine-tuning interne (marché : Unsloth, LoRA)
+- Pas de LangGraph en production (adoption marché : forte)
+- Contexte long (>100k tokens) non exploité
+
+AVANTAGES CONCURRENTIELS ACTUELS :
+- Pipeline RAG mature, 12 000 docs indexés
+- Mistral local = 0 fuite de données sensibles
+- Équipe LangChain expérimentée (18 mois d'utilisation)

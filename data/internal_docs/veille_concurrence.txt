@@ -1,0 +1,183 @@
+VEILLE CONCURRENTIELLE & MARCHÉ IA — Entreprise X
+Département : Innovation & Veille Technologique
+Dernière mise à jour : mai 2026
+Auteurs : Équipe R&D / Équipe Innovation IA
+Classification : interne — confidentiel
+========================================================
+
+
+1. POSITIONNEMENT DU MARCHÉ IA EN 2026
+----------------------------------------
+
+Le marché des frameworks d'agents IA autonomes connaît une accélération
+majeure depuis début 2025. Les architectures multi-agents sont devenues
+le paradigme dominant, supplantant les pipelines LLM séquentiels classiques.
+
+Tendances de fond identifiées :
+- Adoption massive de LangGraph pour les workflows agentiques stateful
+- Convergence RAG + agents autonomes comme standard industriel
+- Fine-tuning efficace (Unsloth, LoRA) en démocratisation rapide
+- Contextes longs (1M tokens, Gemini 1.5 Pro) ouvrant de nouveaux cas d'usage
+- Agents de code autonomes (Devin, OpenDevin) en émergence forte
+
+
+2. ANALYSE DES CONCURRENTS DIRECTS
+-------------------------------------
+
+CONCURRENT A — Startup IA nationale (confidentiel)
+Statut : actif, levée de fonds série A (8M€, jan. 2026)
+Stack technologique observé :
+  - LangGraph en production depuis sept. 2025
+  - AutoGen pour orchestration multi-agents
+  - Fine-tuning Mistral 7B sur données sectorielles
+  - ChromaDB + Pinecone (hybride)
+Avantage concurrentiel : agents autonomes déployés chez 3 clients grands comptes
+Écart avec Entreprise X : 8 à 12 mois d'avance sur les agents en production
+
+CONCURRENT B — ESN spécialisée IA (France)
+Statut : actif, 45 consultants IA
+Stack technologique observé :
+  - CrewAI pour pipelines multi-agents
+  - GPT-4o + Claude 3 Opus selon les tâches
+  - RAG hybride (Elasticsearch + FAISS)
+  - Agents de veille automatisée en production
+Avantage concurrentiel : offre packagée "veille IA as a service"
+Écart avec Entreprise X : ahead sur la commercialisation de la veille automatisée
+
+CONCURRENT C — Scale-up européenne (Berlin)
+Statut : actif, 120 employés
+Stack technologique observé :
+  - Phidata + LangChain combinés
+  - Mixtral 8x22B auto-hébergé (souveraineté données)
+  - Pipeline RAG propriétaire avec reranking cross-encoder
+  - Déploiement on-premise pour clients réglementés (RGPD)
+Avantage concurrentiel : offre souveraine sans dépendance cloud US
+Écart avec Entreprise X : modèle on-premise non disponible chez nous
+
+
+3. TECHNOLOGIES SURVEILLÉES — STATUT MARCHÉ
+----------------------------------------------
+
+ADOPTÉ MASSIVEMENT par le marché :
+  [x] LangGraph              — graphes d'agents stateful, ReAct natif
+  [x] AutoGen (Microsoft)    — conversations multi-agents automatisées
+  [x] CrewAI                 — orchestration par rôles d'agents
+  [x] RAG hybride            — vecteur + BM25 + reranking
+  [x] Unsloth                — fine-tuning 5x plus rapide, -70% mémoire GPU
+
+EN ADOPTION RAPIDE :
+  [~] LangGraph Cloud        — déploiement managé de graphes d'agents
+  [~] OpenDevin              — agent de code autonome open-source
+  [~] Phidata                — agents avec mémoire persistante
+  [~] Gemini 1.5 Pro         — contexte 1M tokens pour documents longs
+  [~] Mistral Large 2        — alternative souveraine à GPT-4o
+
+ÉMERGENT / À SURVEILLER :
+  [?] Llama 3.1 405B         — modèle open-source rivalisant GPT-4o
+  [?] Agent Q (Apple)        — agents mobiles, usage grand public
+  [?] Claude 3.5 Sonnet      — meilleur benchmark code à date (juil. 2025)
+  [?] Cohere Command R+      — RAG natif optimisé, usage enterprise
+
+NON ADOPTÉ / HYPE RETOMBÉE :
+  [-] AutoGPT                — trop instable en production
+  [-] BabyAGI                — dépassé par des architectures plus robustes
+  [-] Semantic Kernel        — adoption faible hors écosystème Microsoft
+
+
+4. ÉCARTS STRATÉGIQUES — ENTREPRISE X VS MARCHÉ
+--------------------------------------------------
+
+ÉCART CRITIQUE (risque de décrochage à 6 mois) :
+  → Agents multi-agents : 0 agent autonome en production
+    Marché : 60% des acteurs ont au moins 1 agent en prod (étude Gartner Q1 2026)
+    Impact : perte de compétitivité sur les offres d'automatisation avancée
+
+  → Fine-tuning interne : aucune capacité en place
+    Marché : fine-tuning sur données propriétaires = avantage différenciant majeur
+    Impact : dépendance totale aux modèles génériques (moins précis sur notre domaine)
+
+ÉCART IMPORTANT (risque à 12 mois) :
+  → LangGraph non en production
+    Marché : LangGraph devient le standard de facto pour les workflows complexes
+    Risque : dette technique LangChain → LangGraph si migration tardive
+
+  → RAG sans reranking cross-encoder
+    Marché : reranking = standard pour les RAG de qualité production
+    Impact : précision RAG inférieure de ~15-20% vs concurrents avancés
+
+  → Pas de modèle LLM open-source auto-hébergé pour tâches sensibles
+    Marché : Mistral / Llama 3 auto-hébergés = offre souveraine différenciante
+    Impact : clients réglementés (santé, finance) non adressables
+
+
+5. OPPORTUNITÉS IDENTIFIÉES
+------------------------------
+
+OPP-1 : Veille technologique automatisée (ce projet)
+  Statut : aucun concurrent direct ne commercialise cela en France à date
+  Potentiel : offre interne + revente potentielle comme service
+  Délai de marché : 3 à 6 mois avant que des concurrents arrivent
+
+OPP-2 : RAG sur documents réglementaires (RGPD, NIS2, DORA)
+  Statut : besoin fort non adressé par les outils génériques
+  Stack cible : LangChain + ChromaDB (déjà en place) + fine-tuning Mistral local
+  Délai : exploitable en Q3 2026
+
+OPP-3 : Agent d'automatisation documentaire interne
+  Statut : projet ARIA en cours, base technique disponible
+  Extension possible : commercialiser l'agent en SaaS B2B
+  Délai : Q4 2026 si ARIA validé en juillet
+
+
+6. BENCHMARKS TECHNOLOGIQUES RÉCENTS
+---------------------------------------
+
+Comparaison modèles LLM (benchmark interne — avril 2026) :
+  GPT-4o          : précision 87% sur nos tâches, coût 0,005$/1k tokens
+  Claude 3 Haiku  : précision 81%, coût 0,001$/1k tokens (rapport qualité/prix)
+  Mistral 7B local: précision 74%, coût infra uniquement (~0,0002$/1k tokens)
+  Llama 3.1 8B    : précision 72%, non encore testé en production
+
+Comparaison frameworks RAG (test interne — mars 2026) :
+  LangChain + ChromaDB (actuel) : score similarité moyen 0.78
+  LangChain + FAISS             : score similarité moyen 0.79 (+1%)
+  LangChain + Pinecone          : score similarité moyen 0.82 (+5%), coût +40€/mois
+  LangGraph + ChromaDB + reranker: score similarité moyen 0.87 (+12%) — NON DÉPLOYÉ
+
+
+7. SIGNAUX FAIBLES DÉTECTÉS
+------------------------------
+
+- Microsoft intègre AutoGen directement dans Azure AI Studio (mars 2026)
+  → Risque : nos clients Azure pourraient adopter AutoGen sans passer par nous
+
+- Anthropic annonce Claude 4 pour fin 2026 avec "extended thinking" natif
+  → Opportunité : meilleure qualité de raisonnement pour les agents complexes
+
+- OpenAI lance "Operator" en beta — agent web autonome grand public (fév. 2026)
+  → Signal : les agents autonomes entrent dans le mainstream, accélération du marché
+
+- GitHub Copilot Agent Mode en GA depuis avril 2026
+  → Impact : automatisation du code en production chez nos clients développeurs
+
+
+8. RECOMMANDATIONS DE VEILLE (prochains 3 mois)
+--------------------------------------------------
+
+Surveiller en priorité :
+  1. Releases LangGraph (cadence mensuelle) — impacts sur notre migration
+  2. Llama 3.2 (attendu Q3 2026) — potentiel remplacement Mistral 7B
+  3. AutoGen v0.4 — stabilisation API, décision réadoption possible
+  4. Gemini 1.5 Flash pricing — alternative low-cost à Claude Haiku
+  5. OpenDevin roadmap — agent de code open-source, pertinent pour projet ARIA
+
+Sources surveillées régulièrement :
+  - arXiv cs.AI (daily digest)
+  - GitHub trending Python (hebdomadaire)
+  - Hacker News "Ask HN" sur IA (quotidien)
+  - The Batch (DeepLearning.AI) — newsletter hebdomadaire
+  - State of AI Report (trimestriel)
+
+========================================================
+Prochaine mise à jour prévue : juin 2026
+Contact : equipe-innovation@entreprisex.fr

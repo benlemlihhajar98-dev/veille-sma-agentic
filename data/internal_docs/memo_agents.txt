@@ -1,6 +1,12 @@
-Les frameworks LangChain et CrewAI ont été étudiés.
+À la fin du fichier, ajouter :
 
-L’entreprise souhaite développer des systèmes multi-agents capables de :
-- planifier des tâches
-- collaborer entre agents
-- produire des rapports automatiques
+STATUT DÉPLOIEMENT (mai 2026) :
+- LangChain : EN PRODUCTION depuis jan. 2026
+- CrewAI : ÉVALUATION en cours, livraison prévue juil. 2026
+- LangGraph : POC, décision adoption prévue Q3 2026
+- AutoGen : REJETÉ — réévaluation envisagée 2027
+
+PROJETS ACTIFS utilisant ces frameworks :
+- Projet ARIA : assistant documentaire RH (LangChain + RAG)
+- Projet VEILLE-AUTO : ce projet (LangGraph + Groq)
+- Projet DATA-CLEAN : nettoyage CRM (GPT-4o + pandas)

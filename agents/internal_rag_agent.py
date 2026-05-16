@@ -68,35 +68,30 @@ print("Embeddings générés avec succès.")
 # Fonction de recherche
 # -----------------------------------
 
-def search_internal_knowledge(question):
+def search_internal_knowledge(question: str) -> dict:
+    """Retourne un dict structuré pour que HAJAR/WAFAE puissent l'utiliser."""
 
-    print("\nQuestion :", question)
-
-    # Vectorisation de la question
     question_embedding = model.encode([question])
+    scores = cosine_similarity(question_embedding, embeddings)[0]
 
-    # Calcul des similarités
-    scores = cosine_similarity(
-        question_embedding,
-        embeddings
-    )[0]
+    # Top 3 résultats (pas juste le meilleur)
+    top_indices = scores.argsort()[-3:][::-1]
 
-    # Meilleur résultat
-    best_index = np.argmax(scores)
+    results = []
+    for idx in top_indices:
+        results.append({
+            "score":   round(float(scores[idx]), 4),
+            "source":  chunks[idx].metadata.get("source", "inconnu"),
+            "content": chunks[idx].page_content,
+        })
 
-    best_score = scores[best_index]
-
-    best_chunk = chunks[best_index]
-
-    # Affichage
-    print("\n--- MEILLEUR RÉSULTAT ---")
-    print(f"Score : {best_score:.4f}")
-
-    print("\nContenu :")
-    print(best_chunk.page_content)
-
-    print("\nSource :")
-    print(best_chunk.metadata.get("source"))
+    return {
+        "question": question,
+        "best_score": results[0]["score"],
+        "best_source": results[0]["source"],
+        "best_content": results[0]["content"],
+        "all_results": results,
+    }
 
 # -----------------------------------
 # Question utilisateur

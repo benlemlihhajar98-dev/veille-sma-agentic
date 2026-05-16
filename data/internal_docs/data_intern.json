@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "dataset_name": "internal_ai_knowledge_base",
+    "company": "Entreprise X",
+    "department": "Innovation & Veille Technologique",
+    "project": "Cellule Automatisée de Veille Technologique & Stratégique",
+    "version": "1.0.0",
+    "generated_at": "2026-05-13T16:00:00Z",
+    "language": "fr",
+    "description": "Base de connaissances interne structurée pour l’analyse IA, RAG et systèmes multi-agents.",
+    "maintainers": [
+      "Equipe Innovation IA",
+      "Equipe R&D"
+    ],
+    "domains": [
+      "Artificial Intelligence",
+      "RAG",
+      "LLM",
+      "AI Agents",
+      "Automation",
+      "Cybersecurity"
+    ],
+    "classification": "internal",
+    "data_format": "json"
+  },
+  "statistics": {
+    "total_documents": 4,
+    "document_types": {
+      "memo": 1,
+      "report": 1,
+      "risk-analysis": 1,
+      "strategy": 1
+    },
+    "top_topics": {
+      "ai_agents": 2,
+      "rag": 1,
+      "llm_risks": 1,
+      "automation": 3,
+      "embeddings": 1,
+      "workflow": 1
+    },
+    "priority_distribution": {
+      "critical": 1,
+      "high": 3
+    }
+  },
+  "documents": [
+    {
+      "id": "INT-001",
+      "title": "Étude des Frameworks Multi-Agents",
+      "filename": "memo_agent.txt",
+      "type": "memo",
+      "source": "interne",
+      "department": "Innovation",
+      "authors": [
+        "Equipe IA"
+      ],
+      "created_at": "2026-05-01T10:00:00Z",
+      "updated_at": "2026-05-05T15:20:00Z",
+      "priority": "high",
+      "risk_level": "low",
+      "business_impact": "high",
+      "strategic_alignment": true,
+      "confidence_score": 0.91,
+      "summary": "Étude des frameworks LangChain et CrewAI pour la conception de systèmes multi-agents autonomes.",
+      "content": {
+        "objective": "Développer des systèmes multi-agents capables de collaborer et d’automatiser des workflows complexes.",
+        "frameworks_studied": [
+          "LangChain",
+          "CrewAI"
+        ],
+        "capabilities": [
+          "planification des tâches",
+          "collaboration entre agents",
+          "production automatique de rapports",
+          "orchestration multi-agents",
+          "gestion des workflows IA"
+        ],
+        "identified_use_cases": [
+          "veille technologique",
+          "automatisation documentaire",
+          "génération de rapports",
+          "analyse stratégique"
+        ]
+      },
+      "technologies": [
+        "LangChain",
+        "CrewAI",
+        "Python",
+        "LLM",
+        "Agents IA"
+      ],
+      "tags": [
+        "multi-agent",
+        "langchain",
+        "crewai",
+        "automation",
+        "workflow",
+        "llm",
+        "ai-agents"
+      ],
+      "recommendations": [
+        "Poursuivre les tests sur l’orchestration des agents.",
+        "Évaluer les performances des agents collaboratifs.",
+        "Mettre en place une architecture modulaire."
+      ],
+      "related_projects": [
+        "Automated Strategic Watch",
+        "Internal AI Assistant"
+      ]
+    },
+    {
+      "id": "INT-002",
+      "title": "Rapport d’Expérimentation RAG",
+      "filename": "rapport_ai.txt",
+      "type": "report",
+      "source": "interne",
+      "department": "R&D",
+      "authors": [
+        "Equipe Recherche IA"
+      ],
+      "created_at": "2026-05-02T09:30:00Z",
+      "updated_at": "2026-05-08T11:00:00Z",
+      "priority": "high",
+      "risk_level": "medium",
+      "business_impact": "high",
+      "strategic_alignment": true,
+      "confidence_score": 0.93,
+      "summary": "Expérimentations RAG menées depuis 2024 pour améliorer la recherche intelligente et l’automatisation documentaire.",
+      "content": {
+        "objectives": [
+          "automatisation documentaire",
+          "recherche intelligente",
+          "veille technologique"
+        ],
+        "tested_models": [
+          "MiniLM",
+          "Gemini Embeddings"
+        ],
+        "tested_features": [
+          "vector search",
+          "semantic retrieval",
+          "embedding indexing",
+          "document chunking"
+        ],
+        "observations": [
+          "MiniLM offre de bonnes performances pour les recherches rapides.",
+          "Gemini Embeddings améliore la qualité sémantique des résultats.",
+          "Les performances dépendent fortement de la qualité des métadonnées."
+        ],
+        "limitations": [
+          "données internes insuffisamment structurées",
+          "faible granularité documentaire",
+          "absence de scoring documentaire"
+        ]
+      },
+      "technologies": [
+        "RAG",
+        "MiniLM",
+        "Gemini Embeddings",
+        "Vector Database",
+        "Semantic Search"
+      ],
+      "tags": [
+        "rag",
+        "retrieval",
+        "embeddings",
+        "semantic-search",
+        "automation",
+        "vector-db"
+      ],
+      "recommendations": [
+        "Structurer les données internes en JSON.",
+        "Ajouter des métadonnées avancées.",
+        "Mettre en place un pipeline d’indexation automatisé.",
+        "Développer un système hybride interne/externe."
+      ],
+      "related_projects": [
+        "Knowledge Base AI",
+        "Strategic Intelligence Platform"
+      ]
+    }
+  ]
+}

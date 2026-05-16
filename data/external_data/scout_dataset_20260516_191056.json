@@ -1,0 +1,733 @@
+{
+  "metadata": {
+    "agent": "FERDAOUS — Agent Scout",
+    "version": "1.0.0",
+    "generated_at": "2026-05-16T17:10:56.508880+00:00",
+    "project": "Cellule Automatisée de Veille Technologique & Stratégique",
+    "supervisors": [
+      "Pr. Hasnaa CHAABI",
+      "Pr. Nadia IDRISSI Zouggari"
+    ],
+    "sources_used": [
+      "GitHub API",
+      "arXiv API",
+      "RSS Feeds",
+      "Hacker News"
+    ],
+    "filter_keywords": [
+      "AI",
+      "LLM",
+      "agent",
+      "transformer",
+      "neural",
+      "deep learning",
+      "machine learning",
+      "GPT",
+      "Claude",
+      "Gemini",
+      "Mistral",
+      "langchain",
+      "RAG",
+      "embedding",
+      "fine-tun",
+      "multimodal",
+      "benchmark",
+      "autonomous",
+      "framework",
+      "hugging face"
+    ]
+  },
+  "statistics": {
+    "total": 22,
+    "by_source": {
+      "Shubhamsaboo/awesome-llm-apps": 1,
+      "thedotmack/claude-mem": 1,
+      "x1xhlol/system-prompts-and-models-of-ai-tools": 1,
+      "multica-ai/andrej-karpathy-skills": 1,
+      "anthropics/claude-code": 1,
+      "google-gemini/gemini-cli": 1,
+      "TauricResearch/TradingAgents": 1,
+      "obra/superpowers": 1,
+      "affaan-m/everything-claude-code": 1,
+      "firecrawl/firecrawl": 1,
+      "msitarzewski/agency-agents": 1,
+      "browser-use/browser-use": 1,
+      "openai/codex": 1,
+      "karpathy/autoresearch": 1,
+      "Hacker News": 3,
+      "anomalyco/opencode": 1,
+      "NousResearch/hermes-agent": 1,
+      "anthropics/skills": 1,
+      "VoltAgent/awesome-design-md": 1,
+      "OpenHands/OpenHands": 1
+    },
+    "by_type": {
+      "github": 19,
+      "hackernews": 3
+    },
+    "top_tags": {
+      "ai-agents": 6,
+      "llm": 6,
+      "ai": 5,
+      "anthropic": 3,
+      "claude": 3,
+      "claude-code": 3,
+      "hacker news": 3,
+      "python": 2,
+      "rag": 2,
+      "artificial-intelligence": 2,
+      "cli": 2,
+      "agent": 2,
+      "developer-tools": 2,
+      "chatgpt": 2,
+      "openai": 2,
+      "agents": 1,
+      "llms": 1,
+      "ai-memory": 1,
+      "chromadb": 1,
+      "claude-agent-sdk": 1
+    }
+  },
+  "items": [
+    {
+      "id": "ef3742cd7f60",
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "source_type": "github",
+      "title": "Shubhamsaboo/awesome-llm-apps",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "summary": "100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
+      "authors": [
+        "Shubhamsaboo"
+      ],
+      "tags": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "published_at": "2024-04-29T05:30:25Z",
+      "collected_at": "2026-05-16T17:09:36.385866+00:00",
+      "relevance_score": 0.667,
+      "extra": {
+        "stars": 110634,
+        "forks": 16394,
+        "language": "Python",
+        "open_issues": 9,
+        "updated_at": "2026-05-16T17:06:07Z",
+        "watchers": 110634
+      }
+    },
+    {
+      "id": "0ccf2e9cc906",
+      "source": "thedotmack/claude-mem",
+      "source_type": "github",
+      "title": "thedotmack/claude-mem",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "summary": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "authors": [
+        "thedotmack"
+      ],
+      "tags": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "published_at": "2025-08-31T20:50:03Z",
+      "collected_at": "2026-05-16T17:09:36.386394+00:00",
+      "relevance_score": 0.667,
+      "extra": {
+        "stars": 76139,
+        "forks": 6536,
+        "language": "TypeScript",
+        "open_issues": 100,
+        "updated_at": "2026-05-16T17:07:37Z",
+        "watchers": 76139
+      }
+    },
+    {
+      "id": "91af6099c3d7",
+      "source": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "source_type": "github",
+      "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "summary": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+      "authors": [
+        "x1xhlol"
+      ],
+      "tags": [
+        "ai",
+        "bolt",
+        "cluely",
+        "copilot",
+        "cursor",
+        "cursorai",
+        "devin",
+        "github-copilot",
+        "lovable",
+        "open-source",
+        "perplexity",
+        "replit",
+        "system-prompts",
+        "trae",
+        "trae-ai",
+        "trae-ide",
+        "v0",
+        "vscode",
+        "windsurf",
+        "windsurf-ai"
+      ],
+      "published_at": "2025-03-05T16:38:29Z",
+      "collected_at": "2026-05-16T17:09:36.384530+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 137481,
+        "forks": 34244,
+        "language": null,
+        "open_issues": 142,
+        "updated_at": "2026-05-16T16:41:10Z",
+        "watchers": 137481
+      }
+    },
+    {
+      "id": "a2a6d1b8f642",
+      "source": "multica-ai/andrej-karpathy-skills",
+      "source_type": "github",
+      "title": "multica-ai/andrej-karpathy-skills",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "summary": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "authors": [
+        "multica-ai"
+      ],
+      "tags": [],
+      "published_at": "2026-01-27T03:53:13Z",
+      "collected_at": "2026-05-16T17:09:36.384777+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 132176,
+        "forks": 13456,
+        "language": null,
+        "open_issues": 90,
+        "updated_at": "2026-05-16T17:08:57Z",
+        "watchers": 132176
+      }
+    },
+    {
+      "id": "bdc0f854674c",
+      "source": "anthropics/claude-code",
+      "source_type": "github",
+      "title": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "summary": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "authors": [
+        "anthropics"
+      ],
+      "tags": [],
+      "published_at": "2025-02-22T17:41:21Z",
+      "collected_at": "2026-05-16T17:09:36.384920+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 124104,
+        "forks": 20449,
+        "language": "Shell",
+        "open_issues": 11061,
+        "updated_at": "2026-05-16T17:09:34Z",
+        "watchers": 124104
+      }
+    },
+    {
+      "id": "089ed98d3da9",
+      "source": "google-gemini/gemini-cli",
+      "source_type": "github",
+      "title": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "authors": [
+        "google-gemini"
+      ],
+      "tags": [
+        "ai",
+        "ai-agents",
+        "cli",
+        "gemini",
+        "gemini-api",
+        "mcp-client",
+        "mcp-server"
+      ],
+      "published_at": "2025-04-17T17:04:31Z",
+      "collected_at": "2026-05-16T17:09:36.385922+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 104125,
+        "forks": 13675,
+        "language": "TypeScript",
+        "open_issues": 1792,
+        "updated_at": "2026-05-16T16:33:33Z",
+        "watchers": 104125
+      }
+    },
+    {
+      "id": "f2ab841e2e27",
+      "source": "TauricResearch/TradingAgents",
+      "source_type": "github",
+      "title": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "summary": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "authors": [
+        "TauricResearch"
+      ],
+      "tags": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "published_at": "2024-12-28T03:31:08Z",
+      "collected_at": "2026-05-16T17:09:36.386503+00:00",
+      "relevance_score": 0.5,
+      "extra": {
+        "stars": 76088,
+        "forks": 14807,
+        "language": "Python",
+        "open_issues": 345,
+        "updated_at": "2026-05-16T17:05:48Z",
+        "watchers": 76088
+      }
+    },
+    {
+      "id": "ec31ef2bcb4f",
+      "source": "obra/superpowers",
+      "source_type": "github",
+      "title": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "summary": "An agentic skills framework & software development methodology that works.",
+      "authors": [
+        "obra"
+      ],
+      "tags": [],
+      "published_at": "2025-10-09T19:45:18Z",
+      "collected_at": "2026-05-16T17:09:36.383978+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 193728,
+        "forks": 17230,
+        "language": "Shell",
+        "open_issues": 274,
+        "updated_at": "2026-05-16T17:07:41Z",
+        "watchers": 193728
+      }
+    },
+    {
+      "id": "207c4dee3f19",
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "title": "affaan-m/everything-claude-code",
+      "url": "https://github.com/affaan-m/everything-claude-code",
+      "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "authors": [
+        "affaan-m"
+      ],
+      "tags": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "published_at": "2026-01-18T00:51:51Z",
+      "collected_at": "2026-05-16T17:09:36.384157+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 184364,
+        "forks": 28455,
+        "language": "JavaScript",
+        "open_issues": 4,
+        "updated_at": "2026-05-16T17:07:56Z",
+        "watchers": 184364
+      }
+    },
+    {
+      "id": "bef32d25e7d1",
+      "source": "firecrawl/firecrawl",
+      "source_type": "github",
+      "title": "firecrawl/firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "summary": "🔥 Search, scrape, and clean the web for AI agents.",
+      "authors": [
+        "firecrawl"
+      ],
+      "tags": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown",
+        "llm",
+        "markdown",
+        "scraper",
+        "scraping",
+        "web-crawler",
+        "web-data",
+        "web-data-extraction",
+        "web-scraper",
+        "web-scraping",
+        "web-search",
+        "webscraping"
+      ],
+      "published_at": "2024-04-15T21:02:29Z",
+      "collected_at": "2026-05-16T17:09:36.385793+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 120548,
+        "forks": 7390,
+        "language": "TypeScript",
+        "open_issues": 324,
+        "updated_at": "2026-05-16T17:09:24Z",
+        "watchers": 120548
+      }
+    },
+    {
+      "id": "10ad4087341c",
+      "source": "msitarzewski/agency-agents",
+      "source_type": "github",
+      "title": "msitarzewski/agency-agents",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "summary": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+      "authors": [
+        "msitarzewski"
+      ],
+      "tags": [],
+      "published_at": "2025-10-13T12:12:29Z",
+      "collected_at": "2026-05-16T17:09:36.385991+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 98338,
+        "forks": 16320,
+        "language": "Shell",
+        "open_issues": 136,
+        "updated_at": "2026-05-16T17:09:18Z",
+        "watchers": 98338
+      }
+    },
+    {
+      "id": "1f1e6c6cdd9f",
+      "source": "browser-use/browser-use",
+      "source_type": "github",
+      "title": "browser-use/browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "summary": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "authors": [
+        "browser-use"
+      ],
+      "tags": [
+        "ai-agents",
+        "ai-tools",
+        "browser-automation",
+        "browser-use",
+        "llm",
+        "playwright",
+        "python"
+      ],
+      "published_at": "2024-10-31T16:00:56Z",
+      "collected_at": "2026-05-16T17:09:36.386053+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 94167,
+        "forks": 10637,
+        "language": "Python",
+        "open_issues": 229,
+        "updated_at": "2026-05-16T17:06:55Z",
+        "watchers": 94167
+      }
+    },
+    {
+      "id": "64c19535df67",
+      "source": "openai/codex",
+      "source_type": "github",
+      "title": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "summary": "Lightweight coding agent that runs in your terminal",
+      "authors": [
+        "openai"
+      ],
+      "tags": [],
+      "published_at": "2025-04-13T05:37:54Z",
+      "collected_at": "2026-05-16T17:09:36.386099+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 83065,
+        "forks": 12038,
+        "language": "Rust",
+        "open_issues": 4388,
+        "updated_at": "2026-05-16T17:09:00Z",
+        "watchers": 83065
+      }
+    },
+    {
+      "id": "9ef38397a55d",
+      "source": "karpathy/autoresearch",
+      "source_type": "github",
+      "title": "karpathy/autoresearch",
+      "url": "https://github.com/karpathy/autoresearch",
+      "summary": "AI agents running research on single-GPU nanochat training automatically",
+      "authors": [
+        "karpathy"
+      ],
+      "tags": [],
+      "published_at": "2026-03-06T22:00:43Z",
+      "collected_at": "2026-05-16T17:09:36.386160+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "stars": 81363,
+        "forks": 11835,
+        "language": "Python",
+        "open_issues": 185,
+        "updated_at": "2026-05-16T16:48:34Z",
+        "watchers": 81363
+      }
+    },
+    {
+      "id": "313aaa752f4d",
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "DeepSeek-V4-Flash means LLM steering is interesting again",
+      "url": "https://www.seangoedecke.com/steering-vectors/",
+      "summary": "",
+      "authors": [
+        "Brajeshwar"
+      ],
+      "tags": [
+        "hacker news"
+      ],
+      "published_at": "2026-05-16T14:58:16+00:00",
+      "collected_at": "2026-05-16T17:10:49.173414+00:00",
+      "relevance_score": 0.333,
+      "extra": {
+        "hn_id": 48160807,
+        "score": 78,
+        "comments": 26
+      }
+    },
+    {
+      "id": "e0d693e12f7e",
+      "source": "anomalyco/opencode",
+      "source_type": "github",
+      "title": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "summary": "The open source coding agent.",
+      "authors": [
+        "anomalyco"
+      ],
+      "tags": [],
+      "published_at": "2025-04-30T20:08:00Z",
+      "collected_at": "2026-05-16T17:09:36.384290+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 161182,
+        "forks": 18923,
+        "language": "TypeScript",
+        "open_issues": 6040,
+        "updated_at": "2026-05-16T17:09:34Z",
+        "watchers": 161182
+      }
+    },
+    {
+      "id": "4010d491d6ad",
+      "source": "NousResearch/hermes-agent",
+      "source_type": "github",
+      "title": "NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "summary": "The agent that grows with you",
+      "authors": [
+        "NousResearch"
+      ],
+      "tags": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "clawdbot",
+        "codex",
+        "hermes",
+        "hermes-agent",
+        "llm",
+        "moltbot",
+        "nous-research",
+        "openai",
+        "openclaw"
+      ],
+      "published_at": "2025-07-22T22:22:28Z",
+      "collected_at": "2026-05-16T17:09:36.384386+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 153094,
+        "forks": 24370,
+        "language": "Python",
+        "open_issues": 11620,
+        "updated_at": "2026-05-16T17:08:04Z",
+        "watchers": 153094
+      }
+    },
+    {
+      "id": "27d8937674a2",
+      "source": "anthropics/skills",
+      "source_type": "github",
+      "title": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "summary": "Public repository for Agent Skills",
+      "authors": [
+        "anthropics"
+      ],
+      "tags": [
+        "agent-skills"
+      ],
+      "published_at": "2025-09-22T15:53:31Z",
+      "collected_at": "2026-05-16T17:09:36.384671+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 135729,
+        "forks": 16003,
+        "language": "Python",
+        "open_issues": 849,
+        "updated_at": "2026-05-16T16:56:48Z",
+        "watchers": 135729
+      }
+    },
+    {
+      "id": "ba7ba7adf47a",
+      "source": "VoltAgent/awesome-design-md",
+      "source_type": "github",
+      "title": "VoltAgent/awesome-design-md",
+      "url": "https://github.com/VoltAgent/awesome-design-md",
+      "summary": "A collection of DESIGN.md files inspired by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+      "authors": [
+        "VoltAgent"
+      ],
+      "tags": [
+        "awesome-list",
+        "design-md",
+        "design-system",
+        "design-tokens",
+        "figma",
+        "google-stitch",
+        "landing-page",
+        "vibe-coding",
+        "vibe-design"
+      ],
+      "published_at": "2026-03-31T16:37:01Z",
+      "collected_at": "2026-05-16T17:09:36.386255+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 79721,
+        "forks": 9629,
+        "language": null,
+        "open_issues": 281,
+        "updated_at": "2026-05-16T17:06:27Z",
+        "watchers": 79721
+      }
+    },
+    {
+      "id": "1b85844e6d27",
+      "source": "OpenHands/OpenHands",
+      "source_type": "github",
+      "title": "OpenHands/OpenHands",
+      "url": "https://github.com/OpenHands/OpenHands",
+      "summary": "🙌 OpenHands: AI-Driven Development",
+      "authors": [
+        "OpenHands"
+      ],
+      "tags": [
+        "agent",
+        "artificial-intelligence",
+        "chatgpt",
+        "claude-ai",
+        "cli",
+        "developer-tools",
+        "gpt",
+        "llm",
+        "openai"
+      ],
+      "published_at": "2024-03-13T03:33:31Z",
+      "collected_at": "2026-05-16T17:09:36.386558+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "stars": 73742,
+        "forks": 9332,
+        "language": "Python",
+        "open_issues": 413,
+        "updated_at": "2026-05-16T16:47:55Z",
+        "watchers": 73742
+      }
+    },
+    {
+      "id": "bf5e07771b7f",
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "I believe there are entire companies right now under AI psychosis",
+      "url": "https://twitter.com/mitchellh/status/2055380239711457578",
+      "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;mitchellh&#x2F;status&#x2F;2055380239711457578 https:&#x2F;&#x2F;hachyderm.io&#x2F;@mitchellh&#x2F;116580433508108130",
+      "authors": [
+        "reasonableklout"
+      ],
+      "tags": [
+        "hacker news"
+      ],
+      "published_at": "2026-05-15T20:26:47+00:00",
+      "collected_at": "2026-05-16T17:10:52.246196+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "hn_id": 48153379,
+        "score": 1660,
+        "comments": 872
+      }
+    },
+    {
+      "id": "33b9d0db6585",
+      "source": "Hacker News",
+      "source_type": "hackernews",
+      "title": "Frontier AI has broken the open CTF format",
+      "url": "https://kabir.au/blog/the-ctf-scene-is-dead",
+      "summary": "",
+      "authors": [
+        "frays"
+      ],
+      "tags": [
+        "hacker news"
+      ],
+      "published_at": "2026-05-16T07:01:55+00:00",
+      "collected_at": "2026-05-16T17:10:55.644750+00:00",
+      "relevance_score": 0.167,
+      "extra": {
+        "hn_id": 48157559,
+        "score": 260,
+        "comments": 232
+      }
+    }
+  ]
+}

@@ -309,7 +309,7 @@ class ArXivCollector:
                 "sortOrder":    "descending",
             })
             url = f"{self.BASE_URL}?{params}"
-            raw = _http_get(url)
+            raw = _http_get(url,timeout=30)
             if not raw:
                 continue
 
@@ -365,7 +365,7 @@ class ArXivCollector:
                     },
                 ))
 
-            time.sleep(3)   # Respecter les 3 secondes recommandées par arXiv
+            time.sleep(8)   # Respecter les 3 secondes recommandées par arXiv
 
         log.info("arXiv — %d articles pertinents retenus", len(items))
         return items

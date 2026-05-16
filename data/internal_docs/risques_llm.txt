@@ -1,8 +1,12 @@
-L’entreprise a identifié plusieurs risques liés aux modèles LLM :
+À la fin du fichier, ajouter :
 
-- hallucinations des réponses
-- fuite potentielle de données sensibles
-- dépendance aux APIs externes
-- coûts élevés de calcul
+NIVEAUX DE CRITICITÉ :
+- Hallucinations : CRITIQUE — validation humaine obligatoire pour rapports clients
+- Fuite de données : CRITIQUE — aucune donnée client envoyée aux APIs externes
+- Dépendance API : ÉLEVÉ — mitigation : Mistral 7B auto-hébergé pour données sensibles
+- Coûts de calcul : MOYEN — budget prévu, monitoring en place
 
-Une validation humaine reste nécessaire pour les rapports critiques.
+MESURES DE MITIGATION EN PLACE :
+- Revue humaine systématique sur outputs critiques
+- Données confidentielles : routage vers Mistral local (0 envoi externe)
+- Circuit-breaker sur les APIs : fallback automatique si indisponibilité
