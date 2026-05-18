@@ -357,6 +357,6 @@ class CoordinatorAgent:
         for i, h in enumerate(self.history, 1):
             print(f"\n  Cycle {i}   : {h['sujet']}")
             print(f"  Thread ID : {h['thread_id']}")
-            print(f"  Durée     : {h['duree_sec']}s")
+            print(f"  Durée (timing)    : {h['duree_sec']}s")
             print(f"  Mode      : {h['mode']}")
         print("=" * 55 + "\n")
