@@ -1,24 +1,18 @@
 # =============================================================
-# coordinator_agent.py — HAJAR (version LangGraph + ReAct)
-# Conforme au cours : create_agent + @tool + InMemorySaver
+# coordinator_agent.py — HAJAR (VRAI LangGraph StateGraph)
+# Noeuds + Edges + State + compile() — conforme au cours
 # =============================================================
 
-import os
-import json
-import glob
-import shutil
-import logging
+import os, json, glob, shutil, logging
 from datetime import datetime
+from typing import TypedDict, Optional
 from dotenv import load_dotenv
-from markdown_pdf import MarkdownPdf, Section
 load_dotenv()
 
-# ── LangGraph / LangChain (cours de la prof) ──────────────────
-from langchain.agents import create_agent          # crée l'agent ReAct
-from langchain_openai import ChatOpenAI            # le LLM coordinateur
-from langchain.tools import tool                   # décorateur @tool
-from langgraph.checkpoint.memory import InMemorySaver  # mémoire volatile
-from langchain_core.messages import HumanMessage   # message utilisateur
+# ── VRAI LangGraph ──────────────────────────────────────────
+from langgraph.graph import StateGraph, START, END
+from langgraph.checkpoint.memory import InMemorySaver
+from langchain_openai import ChatOpenAI
 
 logging.basicConfig(
     level=logging.INFO,
@@ -29,57 +23,72 @@ log = logging.getLogger("hajar")
 
 
 # =============================================================
-# ÉTAPE 1 — Définir les OUTILS (@tool)
-# Le LLM lit la docstring pour décider QUEL outil appeler et QUAND
+# ÉTAPE 1 — STATE (TypedDict)
+# C'est le "bus de données" partagé entre TOUS les noeuds
+# Chaque noeud lit depuis le state et écrit dans le state
 # =============================================================
 
-@tool
-def outil_scout(demo_mode: str = "true") -> str:
-    """
-    Lance l'Agent Scout FERDAOUS pour collecter les dernières
-    tendances IA depuis GitHub, arXiv, RSS et Hacker News.
-    Utilise demo_mode='true' pour des données simulées (test),
-    demo_mode='false' pour les vraies APIs (production).
-    Retourne le chemin du fichier JSON produit.
-    """
-    # --- La docstring ci-dessus est lue par le LLM ---
-    # --- pour décider quand appeler cet outil       ---
+class VeilleState(TypedDict):
+    # ── Entrées (données de départ) ──────────────────────────
+    sujet:        str           # thème de veille (ex: "frameworks IA")
+    demo_mode:    bool          # True = données simulées
 
-    log.info("@tool outil_scout appelé (demo=%s)", demo_mode)
-    is_demo = demo_mode.lower() == "true"
+    # ── Sorties intermédiaires (chaque noeud enrichit le state)
+    dataset_path: Optional[str] # chemin JSON produit par FERDAOUS
+    rag_result:   Optional[dict]# extrait interne produit par KHADIJA
+    rapport:      Optional[str] # texte du rapport produit par WAFAE
+    rapport_path: Optional[str] # chemin .md sauvegardé par HAJAR
+    pdf_path:     Optional[str] # chemin .pdf exporté
+
+    # ── Gestion des erreurs ──────────────────────────────────
+    erreur:       Optional[str] # message d'erreur si un noeud échoue
+
+
+# =============================================================
+# ÉTAPE 2 — NOEUDS (fonctions Python)
+# Chaque noeud reçoit le state complet et retourne
+# un dictionnaire PARTIEL pour mettre à jour le state
+# =============================================================
+
+def noeud_scout(state: VeilleState) -> dict:
+    """
+    Noeud 1 — Lance FERDAOUS (Agent Scout).
+    Lit  : state["demo_mode"]
+    Écrit: state["dataset_path"] ou state["erreur"]
+    """
+    log.info("NOEUD scout — démarrage (demo=%s)", state["demo_mode"])
 
     try:
         from agents.scout_agent import FerdaousAgent, generate_demo_dataset
 
-        if is_demo:
+        # Appel de l'agent FERDAOUS
+        if state["demo_mode"]:
             filepath = generate_demo_dataset()
         else:
-            agent = FerdaousAgent()
-            filepath = agent.run()
+            filepath = FerdaousAgent().run()
 
         # Copier vers data/external_data/ (chemin lu par WAFAE)
         os.makedirs("data/external_data", exist_ok=True)
         dest = os.path.join("data", "external_data", os.path.basename(filepath))
         shutil.copy2(filepath, dest)
 
-        log.info("Scout terminé → %s", dest)
-        return f"Scout OK — dataset: {dest}"
+        log.info("NOEUD scout — terminé → %s", dest)
+
+        # Retourne UNIQUEMENT les clés modifiées
+        return {"dataset_path": dest}
 
     except Exception as e:
-        log.error("Scout erreur: %s", e)
-        return f"Scout ERREUR: {e}"
+        log.error("NOEUD scout — erreur : %s", e)
+        return {"erreur": f"Scout ERREUR: {e}"}
 
 
-@tool
-def outil_rag(question: str) -> str:
+def noeud_rag(state: VeilleState) -> dict:
     """
-    Lance l'Agent RAG KHADIJA pour interroger la base
-    documentaire interne de l'entreprise.
-    Fournir une question précise sur les positions stratégiques
-    ou connaissances internes de l'entreprise sur l'IA.
-    Retourne l'extrait interne le plus pertinent avec son score.
+    Noeud 2 — Lance KHADIJA (Agent RAG Interne).
+    Lit  : state["sujet"]
+    Écrit: state["rag_result"] ou state["erreur"]
     """
-    log.info("@tool outil_rag appelé — question: %s", question[:50])
+    log.info("NOEUD rag — démarrage")
 
     try:
         import numpy as np
@@ -88,265 +97,281 @@ def outil_rag(question: str) -> str:
         from langchain_community.document_loaders import TextLoader
         from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-        # Chemin absolu — fonctionne peu importe d'où Python est lancé
-        base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # Chemin absolu vers les docs internes de KHADIJA
+        base      = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         docs_path = os.path.join(base, "data", "internal_docs")
 
+        # Charger tous les .txt
         documents = []
         for fname in os.listdir(docs_path):
             if fname.endswith(".txt"):
-                loader = TextLoader(os.path.join(docs_path, fname), encoding="utf-8")
+                loader = TextLoader(
+                    os.path.join(docs_path, fname), encoding="utf-8"
+                )
                 documents.extend(loader.load())
 
         if not documents:
-            return "RAG: aucun document interne trouvé."
+            return {"rag_result": {"score": 0.0,
+                                   "content": "Aucun doc interne.",
+                                   "source": ""}}
 
-        splitter = RecursiveCharacterTextSplitter(chunk_size=300, chunk_overlap=50)
-        chunks = splitter.split_documents(documents)
-
-        model = SentenceTransformer("all-MiniLM-L6-v2")
-        embeddings = model.encode([c.page_content for c in chunks])
-        q_emb = model.encode([question])
-        scores = cosine_similarity(q_emb, embeddings)[0]
-        idx = int(np.argmax(scores))
-
-        best = chunks[idx]
-        score = float(round(scores[idx], 4))
-        log.info("RAG terminé — score: %.4f", score)
-
-        return (
-            f"RAG OK — score: {score}\n"
-            f"Source: {best.metadata.get('source', '')}\n"
-            f"Contenu: {best.page_content}"
+        # Chunking + embeddings (code de KHADIJA)
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=300, chunk_overlap=50
         )
+        chunks     = splitter.split_documents(documents)
+        model      = SentenceTransformer("all-MiniLM-L6-v2")
+        embeddings = model.encode([c.page_content for c in chunks])
+
+        # Recherche sémantique
+        question = f"Position stratégique sur : {state['sujet']}"
+        q_emb    = model.encode([question])
+        scores   = cosine_similarity(q_emb, embeddings)[0]
+        idx      = int(np.argmax(scores))
+
+        result = {
+            "score":   float(round(scores[idx], 4)),
+            "content": chunks[idx].page_content,
+            "source":  chunks[idx].metadata.get("source", ""),
+        }
+
+        log.info("NOEUD rag — score: %.4f", result["score"])
+        return {"rag_result": result}
 
     except Exception as e:
-        log.error("RAG erreur: %s", e)
-        return f"RAG ERREUR: {e}"
+        log.error("NOEUD rag — erreur : %s", e)
+        return {"erreur": f"RAG ERREUR: {e}"}
 
 
-@tool
-def outil_analyse(rag_result: str = "") -> str:
+def noeud_analyse(state: VeilleState) -> dict:
     """
-    Lance l'Agent Analyste WAFAE. 
-    Passer rag_result = la sortie de outil_rag pour enrichir le rapport.
-    Doit être appelé APRÈS outil_scout et outil_rag.
+    Noeud 3 — Lance WAFAE (Agent Analyse + Rapport).
+    Lit  : state["rag_result"] (contexte interne)
+    Écrit: state["rapport"] ou state["erreur"]
     """
+    log.info("NOEUD analyse — démarrage")
+
     try:
         from agents.analysis_agent import AnalysisAgent
-        agent = AnalysisAgent()
 
-        # Parser le résultat RAG reçu de KHADIJA
-        rag_context = None
-        if rag_result and "RAG OK" in rag_result:
-            lines = rag_result.strip().split("\n")
-            rag_context = {
-                "question": "Quels frameworks IA utilise l'entreprise ?",
-                "score":    lines[0].replace("RAG OK — score: ", "").strip() if lines else "N/A",
-                "source":   next((l.replace("Source: ", "") for l in lines if l.startswith("Source:")), "N/A"),
-                "content":  next((l.replace("Contenu: ", "") for l in lines if l.startswith("Contenu:")), "N/A"),
-            }
-
+        agent    = AnalysisAgent()
         external = agent.load_external_data()
         internal = agent.load_internal_docs()
         results  = agent.analyze(external, internal)
+        rapport  = agent.generate_report(results)
+        agent.save_report(rapport)
 
-        # Passer le contexte RAG au générateur de rapport
-        report   = agent.generate_report(results, rag_context=rag_context)
-        agent.save_report(report)
-        return report
+        log.info("NOEUD analyse — terminé")
+        return {"rapport": rapport}
 
     except Exception as e:
-        return f"Analyse ERREUR: {e}"
+        log.error("NOEUD analyse — erreur : %s", e)
+        return {"erreur": f"Analyse ERREUR: {e}"}
 
 
-@tool
-def outil_sauvegarder(contenu: str) -> str:
+def noeud_sauvegarder(state: VeilleState) -> dict:
     """
-    Sauvegarde le rapport final dans outputs/reports/
-    avec un nom horodaté. Appeler en dernier, après analyse.
-    Retourne le chemin du fichier sauvegardé.
+    Noeud 4 — Sauvegarde le rapport final enrichi.
+    Lit  : state["rapport"] + state["rag_result"]
+    Écrit: state["rapport_path"]
     """
-    log.info("@tool outil_sauvegarder appelé")
+    log.info("NOEUD sauvegarder — démarrage")
 
     os.makedirs("outputs/reports", exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    path = f"outputs/reports/rapport_langgraph_{timestamp}.md"
+    timestamp    = datetime.now().strftime("%Y%m%d_%H%M%S")
+    rapport_path = f"outputs/reports/rapport_final_{timestamp}.md"
 
-    enriched = contenu 
-    with open(path, "w", encoding="utf-8") as f:
+    rag = state.get("rag_result") or {}
+    enriched = (state.get("rapport") or "") + f"""
+
+---
+
+## Contexte interne (RAG — KHADIJA)
+
+**Score de similarité :** {rag.get('score', 'N/A')}
+
+**Extrait pertinent :**
+{rag.get('content', 'N/A')}
+
+**Source :** {rag.get('source', 'N/A')}
+
+---
+*Généré le {datetime.now().strftime('%d/%m/%Y à %H:%M')} — SMA Agentic AI*
+*HAJAR (coord.) · FERDAOUS (scout) · KHADIJA (RAG) · WAFAE (analyse)*
+"""
+    with open(rapport_path, "w", encoding="utf-8") as f:
         f.write(enriched)
 
-    log.info("Rapport sauvegardé → %s", path)
-    return path
+    log.info("NOEUD sauvegarder → %s", rapport_path)
+    return {"rapport_path": rapport_path}
 
-@tool
-def outil_export_pdf(markdown_path: str) -> str:
+
+# =============================================================
+# ÉTAPE 3 — EDGE CONDITIONNEL
+# Après le noeud scout, on vérifie s'il y a une erreur
+# Si erreur → on saute directement à END
+# Si OK     → on continue vers noeud_rag
+# =============================================================
+
+def router_apres_scout(state: VeilleState) -> str:
     """
-    Convertit un rapport Markdown sauvegardé en PDF.
-    Fournir le chemin du fichier .md généré par outil_sauvegarder.
-    Retourne le chemin du fichier PDF.
+    Fonction de routage : décide quel noeud vient après scout.
+    Retourne le NOM du prochain noeud.
+    """
+    if state.get("erreur"):
+        log.warning("Erreur détectée → arrêt du pipeline")
+        return "fin_avec_erreur"  # → END
+    return "noeud_rag"            # → continuer normalement
+
+
+# =============================================================
+# ÉTAPE 4 — CONSTRUCTION DU GRAPHE
+# C'est ici qu'on assemble les noeuds et les edges
+# =============================================================
+
+def construire_graphe():
+    """
+    Construit et compile le StateGraph LangGraph.
+
+    Structure :
+      START → noeud_scout
+                ↓ (si OK)
+              noeud_rag
+                ↓
+              noeud_analyse
+                ↓
+              noeud_sauvegarder
+                ↓
+              END
+
+      noeud_scout → END  (si erreur, via edge conditionnel)
     """
 
-    log.info("@tool outil_export_pdf appelé — fichier: %s", markdown_path)
+    # Créer le graphe avec notre TypedDict comme State
+    graphe = StateGraph(VeilleState)
 
-    try:
-        if not os.path.exists(markdown_path):
-            return f"PDF ERREUR: fichier introuvable: {markdown_path}"
+    # ── Ajouter les noeuds ────────────────────────────────────
+    # add_node(nom, fonction)
+    graphe.add_node("noeud_scout",       noeud_scout)
+    graphe.add_node("noeud_rag",         noeud_rag)
+    graphe.add_node("noeud_analyse",     noeud_analyse)
+    graphe.add_node("noeud_sauvegarder", noeud_sauvegarder)
 
-        with open(markdown_path, "r", encoding="utf-8") as f:
-            md_content = f.read()
+    # ── Ajouter les edges (connexions) ────────────────────────
+    # Edge de départ : START → noeud_scout
+    graphe.add_edge(START, "noeud_scout")
 
-        pdf_path = markdown_path.replace(".md", ".pdf")
+    # Edge CONDITIONNEL après scout
+    # router_apres_scout() décide du prochain noeud
+    graphe.add_conditional_edges(
+        "noeud_scout",           # noeud source
+        router_apres_scout,      # fonction de routage
+        {
+            "noeud_rag":       "noeud_rag",  # si OK
+            "fin_avec_erreur": END,           # si erreur
+        }
+    )
 
-        pdf = MarkdownPdf(toc_level=2)
+    # Edges normaux (séquentiels)
+    graphe.add_edge("noeud_rag",         "noeud_analyse")
+    graphe.add_edge("noeud_analyse",     "noeud_sauvegarder")
+    graphe.add_edge("noeud_sauvegarder", END)
 
-        pdf.add_section(
-            Section(md_content)
-        )
+    # ── Compiler le graphe avec la mémoire ───────────────────
+    # checkpointer = InMemorySaver → mémoire volatile (cours ch.4)
+    # thread_id → chaque cycle a sa propre mémoire isolée
+    graphe_compile = graphe.compile(
+        checkpointer=InMemorySaver()
+    )
 
-        pdf.save(pdf_path)
+    log.info("Graphe LangGraph compilé avec succès")
+    return graphe_compile
 
-        log.info("PDF généré → %s", pdf_path)
 
-        return pdf_path
-
-    except Exception as e:
-        log.error("PDF erreur: %s", e)
-        return f"PDF ERREUR: {e}"
-# =============================================================
-# ÉTAPE 2 — Créer le LLM coordinateur
-# Utilise OpenRouter (gratuit) comme dans le cours
-# =============================================================
-
-llm = ChatOpenAI(
-    # Modèle gratuit via OpenRouter — comme dans le cours de la prof
-    model="openai/gpt-4o-mini",
-    openai_api_key=os.getenv("OPENROUTER_API_KEY", ""),
-    openai_api_base="https://openrouter.ai/api/v1",
-    temperature=0.3,   # moins créatif = plus fiable pour orchestration
-)
-
-# =============================================================
-# ÉTAPE 3 — Mémoire (InMemorySaver + thread_id)
-# Comme vu en cours chapitre 4
-# =============================================================
-
-# InMemorySaver = mémoire volatile (RAM)
-# Chaque cycle a son propre thread_id → conversations isolées
-checkpointer = InMemorySaver()
-
-# =============================================================
-# ÉTAPE 4 — Créer l'agent ReAct avec create_agent()
-# 3 paramètres fondamentaux du cours : model, tools, system_prompt
-# =============================================================
-
-TOOLS = [outil_scout, outil_rag, outil_analyse, outil_sauvegarder,outil_export_pdf]
-
-SYSTEM_PROMPT = """Tu es HAJAR, coordinatrice du SMA de veille technologique.
-
-Ordre d'exécution OBLIGATOIRE :
-1. outil_scout(demo_mode) — collecte les données externes
-2. outil_rag(question) — interroge la base interne sur le sujet de veille
-3. outil_analyse(rag_result=<résultat de l'étape 2>) — croise et génère le rapport
-4. outil_sauvegarder(contenu=<rapport de l'étape 3>) — sauvegarde
-5. outil_export_pdf(markdown_path=<chemin du fichier Markdown>) — convertit en PDF
-CRITIQUE : Le résultat de outil_rag DOIT être passé comme paramètre rag_result
-à outil_analyse. Sans cela, la section comparative interne/externe sera absente.
-- Le chemin retourné par outil_sauvegarder DOIT être passé à outil_export_pdf.
-"""
-
-# create_agent() = la fonction centrale du cours
-# Elle crée automatiquement la boucle ReAct : Thought → Action → Observation
-agent_hajar = create_agent(
-    model=llm,
-    tools=TOOLS,
-    system_prompt=SYSTEM_PROMPT,
-    checkpointer=checkpointer,   # active la mémoire
-)
+# Compiler une seule fois au chargement du module
+GRAPHE = construire_graphe()
 
 
 # =============================================================
-# ÉTAPE 5 — Classe principale CoordinatorAgent
+# ÉTAPE 5 — CLASSE PRINCIPALE
 # =============================================================
 
 class CoordinatorAgent:
     """
-    HAJAR — Agent Coordinateur LangGraph.
+    HAJAR — Agent Coordinateur LangGraph (vrai StateGraph).
 
-    Utilise create_agent() + @tool + InMemorySaver
+    Utilise StateGraph + TypedDict + add_node + add_edge + compile
     conformément au cours SMA Agentic AI.
     """
 
     def __init__(self):
-        self.agent = agent_hajar
+        self.graphe  = GRAPHE
         self.history = []
         os.makedirs("data/external_data", exist_ok=True)
         os.makedirs("data/internal_docs",  exist_ok=True)
         os.makedirs("outputs/reports",     exist_ok=True)
 
-    def run_cycle(self, sujet: str = "frameworks IA et LLMs récents",
-                  demo_mode: bool = False) -> str:
+    def run_cycle(
+        self,
+        sujet:     str  = "frameworks IA et LLMs récents",
+        demo_mode: bool = False,
+    ) -> str:
         """
-        Lance un cycle complet via l'agent LangGraph.
+        Exécute un cycle de veille via le StateGraph.
 
-        L'agent ReAct décide lui-même :
-          - Quels outils appeler
-          - Dans quel ordre
-          - Que faire en cas d'erreur
+        Le graphe fait circuler le VeilleState de noeud en noeud.
+        Chaque noeud enrichit le state avec ses résultats.
         """
         log.info("=" * 55)
-        log.info("   HAJAR LangGraph — DÉMARRAGE")
+        log.info("   HAJAR StateGraph — DÉMARRAGE")
         log.info("   Sujet : %s", sujet)
         log.info("   Mode  : %s", "DEMO" if demo_mode else "PRODUCTION")
         log.info("=" * 55)
 
         debut = datetime.now()
 
-        # thread_id unique par cycle = mémoire isolée
+        # State initial : seules les entrées sont renseignées
+        # Les autres champs seront remplis par les noeuds
+        state_initial: VeilleState = {
+            "sujet":        sujet,
+            "demo_mode":    demo_mode,
+            "dataset_path": None,
+            "rag_result":   None,
+            "rapport":      None,
+            "rapport_path": None,
+            "pdf_path":     None,
+            "erreur":       None,
+        }
+
+        # thread_id unique = mémoire isolée pour ce cycle
         thread_id = f"cycle_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
-        # Message envoyé à l'agent — il décide seul comment répondre
-        tache = (
-            f"Lance un cycle complet de veille technologique sur : '{sujet}'. "
-            f"Mode demo : {'true' if demo_mode else 'false'}. "
-            f"Étapes : 1) Scout, 2) RAG sur le sujet, 3) Analyse, 4) Sauvegarde rapport."
+        # Lancer le graphe — il traverse les noeuds automatiquement
+        resultat = self.graphe.invoke(
+            state_initial,
+            config={"configurable": {"thread_id": thread_id}}
         )
 
-        # invoke() = la boucle ReAct s'exécute automatiquement
-        # L'agent appelle les outils jusqu'à avoir une réponse finale
-        response = self.agent.invoke(
-            input={"messages": [HumanMessage(tache)]},
-            config={"configurable": {"thread_id": thread_id}},
-        )
+        duree         = round((datetime.now() - debut).total_seconds(), 1)
+        rapport_path  = resultat.get("rapport_path", "outputs/reports/rapport.md")
 
-        # La réponse finale est toujours dans le dernier message
-        resultat = response["messages"][-1].content
-        duree = round((datetime.now() - debut).total_seconds(), 1)
-
-        # Trouver le chemin du rapport dans la réponse
-        rapport_path = "outputs/reports/rapport_langgraph_latest.md"
-        for line in resultat.split("\n"):
-            if "outputs/reports" in line:
-                import re
-                m = re.search(r"outputs/reports/\S+\.md", line)
-                if m:
-                    rapport_path = m.group()
-                    break
+        if resultat.get("erreur"):
+            log.error("Pipeline terminé avec erreur : %s", resultat["erreur"])
+        else:
+            log.info("=" * 55)
+            log.info("   CYCLE TERMINÉ EN %ss", duree)
+            log.info("   Rapport → %s", rapport_path)
+            log.info("=" * 55)
 
         self.history.append({
-            "sujet": sujet,
+            "sujet":     sujet,
             "thread_id": thread_id,
-            "mode": "demo" if demo_mode else "production",
+            "mode":      "demo" if demo_mode else "production",
             "duree_sec": duree,
+            "rapport":   rapport_path,
+            "erreur":    resultat.get("erreur"),
             "timestamp": datetime.now().isoformat(),
-            "rapport": rapport_path,
         })
-
-        log.info("=" * 55)
-        log.info("   CYCLE TERMINÉ EN %ss", duree)
-        log.info("=" * 55)
-        log.info("Réponse agent :\n%s", resultat)
 
         return rapport_path
 
@@ -357,6 +382,9 @@ class CoordinatorAgent:
         for i, h in enumerate(self.history, 1):
             print(f"\n  Cycle {i}   : {h['sujet']}")
             print(f"  Thread ID : {h['thread_id']}")
-            print(f"  Durée (timing)    : {h['duree_sec']}s")
+            print(f"  Durée     : {h['duree_sec']}s")
             print(f"  Mode      : {h['mode']}")
+            if h.get("erreur"):
+                print(f"  Erreur    : {h['erreur']}")
         print("=" * 55 + "\n")
+__all__ = ["CoordinatorAgent", "GRAPHE", "construire_graphe", "VeilleState"]
